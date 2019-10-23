@@ -18,10 +18,15 @@ NSString *bookDetailURL = @"https://api.itbook.store/1.0/books/";
 - (void)requestNewBookStore:(void (^)(id result))success
                     failure:(void (^)(NSError *error))failure
 {
-    NSURL *URL = [NSURL URLWithString:bookStoreNewURL];
-    AFHTTPSessionManager *sessionManager = [AFHTTPSessionManager manager];
+    NSLog(@"Trying New Book List");
     
-    [sessionManager GET:URL parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    NSURL *URL = [NSURL URLWithString:bookStoreNewURL];
+    
+    AFHTTPSessionManager *sessionManager = [[AFHTTPSessionManager alloc]initWithSessionConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
+    sessionManager.requestSerializer = [AFJSONRequestSerializer serializer];
+    [sessionManager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    
+    NSURLSessionDataTask *task = [sessionManager GET:URL.absoluteString parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSLog(@"%@", responseObject);
         success(responseObject);
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
@@ -29,6 +34,7 @@ NSString *bookDetailURL = @"https://api.itbook.store/1.0/books/";
         failure(error);
     }];
     
+    [task resume];
 }
 
 - (void)requestSearchBookStore:(NSString *)keyword

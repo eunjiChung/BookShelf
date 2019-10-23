@@ -9,10 +9,13 @@
 #import "NewViewController.h"
 #import "BookTableViewCell.h"
 #import "DetailViewController.h"
+#import "EJHTTPClient.h"
+#import <AFNetworking.h>
 
 @interface NewViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) EJHTTPClient *httpClient;
 
 @end
 
@@ -22,6 +25,26 @@
     [super viewDidLoad];
     
     [self.tableView registerNib:[UINib nibWithNibName:@"BookTableViewCell" bundle:nil] forCellReuseIdentifier:@"BookTableViewCell"];
+    
+    [self callNewBookList];
+}
+
+// MARK: - Request Method
+- (void)callNewBookList {
+    NSLog(@"Calling New Book List");
+    
+    NSURL *URL = [NSURL URLWithString:@"https://api.itbook.store/1.0/new"];
+    
+    AFHTTPSessionManager *sessionManager = [[AFHTTPSessionManager alloc]initWithSessionConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
+    sessionManager.requestSerializer = [AFJSONRequestSerializer serializer];
+    [sessionManager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    
+    [sessionManager GET:URL.absoluteString parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NewBooks *newBooks = responseObject;
+        NSLog(@"%@", newBooks);
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSLog(@"%@", error.localizedDescription);
+    }];
 }
 
 // MARK: - TableView Data Source
