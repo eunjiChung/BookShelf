@@ -57,7 +57,7 @@
                     <tabBarItem key="tabBarItem" title="Item" id="NGl-oV-DJa"/>
                     <connections>
                         <outlet property="tableView" destination="LJZ-eZ-9JG" id="hOR-ii-p7Y"/>
-                        <segue destination="gzs-nd-BEh" kind="presentation" modalPresentationStyle="fullScreen" id="0g9-I2-5hX"/>
+                        <segue destination="gzs-nd-BEh" kind="presentation" identifier="new_detail_segue" modalPresentationStyle="fullScreen" id="0g9-I2-5hX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -200,7 +200,7 @@
                     <tabBarItem key="tabBarItem" title="Item" id="yNU-Zn-XXQ"/>
                     <connections>
                         <outlet property="tableView" destination="Z0x-el-5BA" id="2Ec-fq-m1x"/>
-                        <segue destination="gzs-nd-BEh" kind="presentation" modalPresentationStyle="fullScreen" id="fbO-TW-hfo"/>
+                        <segue destination="gzs-nd-BEh" kind="presentation" identifier="search_detail_segue" modalPresentationStyle="fullScreen" id="fbO-TW-hfo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cqu-kA-aRZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -228,6 +228,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="fbO-TW-hfo"/>
+        <segue reference="0g9-I2-5hX"/>
     </inferredMetricsTieBreakers>
 </document>

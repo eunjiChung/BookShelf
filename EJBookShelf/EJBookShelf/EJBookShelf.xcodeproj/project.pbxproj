@@ -20,6 +20,7 @@
 		B65685E723603B5D00B9157C /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B65685E623603B5D00B9157C /* DetailViewController.m */; };
 		B65685EC2360400100B9157C /* BookTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B65685EA2360400100B9157C /* BookTableViewCell.m */; };
 		B65685ED2360400100B9157C /* BookTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B65685EB2360400100B9157C /* BookTableViewCell.xib */; };
+		B65685F12360478100B9157C /* EJHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = B65685F02360478100B9157C /* EJHTTPClient.m */; };
 		BAE9AF5A2C6DDF1CB878E341 /* Pods_EJBookShelfTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10E45F799C5C16036B8BEDC9 /* Pods_EJBookShelfTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +61,8 @@
 		B65685E92360400100B9157C /* BookTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BookTableViewCell.h; sourceTree = "<group>"; };
 		B65685EA2360400100B9157C /* BookTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BookTableViewCell.m; sourceTree = "<group>"; };
 		B65685EB2360400100B9157C /* BookTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookTableViewCell.xib; sourceTree = "<group>"; };
+		B65685EF2360478100B9157C /* EJHTTPClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EJHTTPClient.h; sourceTree = "<group>"; };
+		B65685F02360478100B9157C /* EJHTTPClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EJHTTPClient.m; sourceTree = "<group>"; };
 		B8434BB5A0DA4D6005DE0009 /* Pods_EJBookShelf.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EJBookShelf.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -117,14 +120,16 @@
 			children = (
 				B65685B523603A5500B9157C /* AppDelegate.h */,
 				B65685B623603A5500B9157C /* AppDelegate.m */,
+				B65685EF2360478100B9157C /* EJHTTPClient.h */,
+				B65685F02360478100B9157C /* EJHTTPClient.m */,
 				B65685BE23603A5500B9157C /* Main.storyboard */,
+				B65685EE2360400600B9157C /* TableView Cell */,
 				B65685DF23603B3600B9157C /* NewViewController.h */,
 				B65685E023603B3600B9157C /* NewViewController.m */,
 				B65685E223603B4C00B9157C /* SearchViewController.h */,
 				B65685E323603B4C00B9157C /* SearchViewController.m */,
 				B65685E523603B5D00B9157C /* DetailViewController.h */,
 				B65685E623603B5D00B9157C /* DetailViewController.m */,
-				B65685EE2360400600B9157C /* TableView Cell */,
 				B65685C923603A5600B9157C /* Info.plist */,
 				B65685E823603B7A00B9157C /* Supporting Files */,
 			);
@@ -347,6 +352,7 @@
 				B65685B723603A5500B9157C /* AppDelegate.m in Sources */,
 				B65685EC2360400100B9157C /* BookTableViewCell.m in Sources */,
 				B65685E723603B5D00B9157C /* DetailViewController.m in Sources */,
+				B65685F12360478100B9157C /* EJHTTPClient.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

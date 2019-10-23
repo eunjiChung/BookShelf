@@ -8,6 +8,7 @@
 
 #import "NewViewController.h"
 #import "BookTableViewCell.h"
+#import "DetailViewController.h"
 
 @interface NewViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -33,6 +34,19 @@
     return cell;
 }
 
+// MARK: - TableView Delegate
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier  isEqual:@"new_detail_segue"]) {
+        DetailViewController *destination = segue.destinationViewController;
+        NSIndexPath *selectedIndexPath = sender;
+        NSLog(@"Send book info %@ in %zd", destination, selectedIndexPath.row);
+        [self performSegueWithIdentifier:@"new_detail_segue" sender:selectedIndexPath];
+    }
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [self prepareForSegue:@"new_detail_segue" sender:indexPath];
+}
 
 // MARK: - Layout Method
 - (void)registerNib {
