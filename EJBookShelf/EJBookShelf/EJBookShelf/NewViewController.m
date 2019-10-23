@@ -21,7 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self registerNib];
+    [self.tableView registerNib:[UINib nibWithNibName:@"BookTableViewCell" bundle:nil] forCellReuseIdentifier:@"BookTableViewCell"];
 }
 
 // MARK: - TableView Data Source
@@ -39,18 +39,15 @@
     if ([segue.identifier  isEqual:@"new_detail_segue"]) {
         DetailViewController *destination = segue.destinationViewController;
         NSIndexPath *selectedIndexPath = sender;
+        
+        // TODO: - Send book info of specific cell
         NSLog(@"Send book info %@ in %zd", destination, selectedIndexPath.row);
-        [self performSegueWithIdentifier:@"new_detail_segue" sender:selectedIndexPath];
     }
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [self prepareForSegue:@"new_detail_segue" sender:indexPath];
+    [self performSegueWithIdentifier:@"new_detail_segue" sender:indexPath];
 }
 
-// MARK: - Layout Method
-- (void)registerNib {
-    [self.tableView registerNib:[UINib nibWithNibName:@"BookTableViewCell" bundle:nil] forCellReuseIdentifier:@"BookTableViewCell"];
-}
 
 @end
