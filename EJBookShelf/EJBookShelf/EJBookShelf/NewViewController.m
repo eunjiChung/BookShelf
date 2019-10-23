@@ -40,8 +40,10 @@
     [sessionManager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     
     [sessionManager GET:URL.absoluteString parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NewBooks *newBooks = responseObject;
-        NSLog(@"%@", newBooks);
+        NSDictionary *newBooks = responseObject;
+        NSString *total = newBooks[@"total"];
+        
+        NSLog(@"%@", total);
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"%@", error.localizedDescription);
     }];
