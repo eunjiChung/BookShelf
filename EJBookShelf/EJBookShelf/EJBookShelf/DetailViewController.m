@@ -7,8 +7,11 @@
 //
 
 #import "DetailViewController.h"
+#import "BookTableViewCell.h"
 
-@interface DetailViewController ()
+@interface DetailViewController () <UITableViewDataSource, UITableViewDelegate>
+
+@property (weak, nonatomic) IBOutlet UITableView *tableview;
 
 @end
 
@@ -19,14 +22,19 @@
     // Do any additional setup after loading the view.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (IBAction)didTouchCloseButton:(id)sender {
+    [self dismissViewControllerAnimated:true completion:nil];
 }
-*/
+
+// MARK: - TableView Data source
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 1;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    BookTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BookTableViewCell" forIndexPath:indexPath];
+    
+    return cell;
+}
 
 @end

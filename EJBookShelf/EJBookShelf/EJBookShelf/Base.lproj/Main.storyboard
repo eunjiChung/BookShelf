@@ -57,6 +57,7 @@
                     <tabBarItem key="tabBarItem" title="Item" id="NGl-oV-DJa"/>
                     <connections>
                         <outlet property="tableView" destination="LJZ-eZ-9JG" id="hOR-ii-p7Y"/>
+                        <segue destination="gzs-nd-BEh" kind="presentation" modalPresentationStyle="fullScreen" id="0g9-I2-5hX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -83,6 +84,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZS9-6N-g3O">
                                         <rect key="frame" x="347" y="49" width="46" height="34"/>
                                         <state key="normal" title="Close"/>
+                                        <connections>
+                                            <action selector="didTouchCloseButton:" destination="gzs-nd-BEh" eventType="touchUpInside" id="h0d-ZJ-5Fs"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -100,6 +104,10 @@
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Cgq-fD-tvb">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="801"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="gzs-nd-BEh" id="68e-ot-4Md"/>
+                                            <outlet property="delegate" destination="gzs-nd-BEh" id="mXx-HZ-Fch"/>
+                                        </connections>
                                     </tableView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -123,6 +131,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="4h4-aF-X8o"/>
                     </view>
+                    <connections>
+                        <outlet property="tableview" destination="Cgq-fD-tvb" id="xV8-OZ-Ghd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lGB-uc-tWh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -162,19 +173,35 @@
                                     <string>Title</string>
                                 </scopeButtonTitles>
                             </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Z0x-el-5BA">
+                                <rect key="frame" x="0.0" y="151" width="414" height="662"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="2gO-Cf-Til" id="AjF-WW-o2D"/>
+                                    <outlet property="delegate" destination="2gO-Cf-Til" id="EDj-SR-BlU"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="xKX-jM-0U6" firstAttribute="trailing" secondItem="jEC-SK-Oml" secondAttribute="trailing" id="66D-6h-hFU"/>
+                            <constraint firstItem="Z0x-el-5BA" firstAttribute="leading" secondItem="jEC-SK-Oml" secondAttribute="leading" id="7a3-Uk-07T"/>
                             <constraint firstItem="IxS-Kp-IZz" firstAttribute="trailing" secondItem="jEC-SK-Oml" secondAttribute="trailing" id="CVa-ZN-Sln"/>
                             <constraint firstItem="xKX-jM-0U6" firstAttribute="leading" secondItem="jEC-SK-Oml" secondAttribute="leading" id="NZD-8W-QbC"/>
                             <constraint firstItem="xKX-jM-0U6" firstAttribute="top" secondItem="nBx-vj-a00" secondAttribute="top" id="R0n-BC-9R5"/>
+                            <constraint firstItem="jEC-SK-Oml" firstAttribute="trailing" secondItem="Z0x-el-5BA" secondAttribute="trailing" id="XdS-df-QX0"/>
                             <constraint firstItem="IxS-Kp-IZz" firstAttribute="top" secondItem="xKX-jM-0U6" secondAttribute="bottom" id="iMW-Cg-nr4"/>
                             <constraint firstItem="IxS-Kp-IZz" firstAttribute="leading" secondItem="jEC-SK-Oml" secondAttribute="leading" id="k1e-bk-ueS"/>
+                            <constraint firstItem="jEC-SK-Oml" firstAttribute="bottom" secondItem="Z0x-el-5BA" secondAttribute="bottom" id="k2w-Vh-KOI"/>
+                            <constraint firstItem="Z0x-el-5BA" firstAttribute="top" secondItem="IxS-Kp-IZz" secondAttribute="bottom" id="z7S-s9-TvE"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="jEC-SK-Oml"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="yNU-Zn-XXQ"/>
+                    <connections>
+                        <outlet property="tableView" destination="Z0x-el-5BA" id="2Ec-fq-m1x"/>
+                        <segue destination="gzs-nd-BEh" kind="presentation" modalPresentationStyle="fullScreen" id="fbO-TW-hfo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cqu-kA-aRZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -186,6 +213,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="hId-oZ-KK7" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="AMS-MM-SIW">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
@@ -199,4 +227,7 @@
             <point key="canvasLocation" x="137.68115942028987" y="138.61607142857142"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="fbO-TW-hfo"/>
+    </inferredMetricsTieBreakers>
 </document>

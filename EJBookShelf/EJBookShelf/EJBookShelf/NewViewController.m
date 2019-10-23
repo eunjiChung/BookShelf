@@ -7,6 +7,7 @@
 //
 
 #import "NewViewController.h"
+#import "BookTableViewCell.h"
 
 @interface NewViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -18,7 +19,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    [self registerNib];
 }
 
 // MARK: - TableView Data Source
@@ -27,8 +29,14 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+    BookTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BookTableViewCell" forIndexPath:indexPath];
     return cell;
+}
+
+
+// MARK: - Layout Method
+- (void)registerNib {
+    [self.tableView registerNib:[UINib nibWithNibName:@"BookTableViewCell" bundle:nil] forCellReuseIdentifier:@"BookTableViewCell"];
 }
 
 @end
