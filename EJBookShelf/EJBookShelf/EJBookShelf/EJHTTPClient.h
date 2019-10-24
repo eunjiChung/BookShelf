@@ -14,6 +14,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface EJHTTPClient : NSObject
 
++ (instancetype)sharedInstance;
+
 - (void)requestNewBookStore:(void (^)(id result))success
                     failure:(void (^)(NSError *error))failure;
 - (void)requestSearchBookStore:(NSString *)keyword

@@ -21,10 +21,8 @@
 		B65685EC2360400100B9157C /* BookTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B65685EA2360400100B9157C /* BookTableViewCell.m */; };
 		B65685ED2360400100B9157C /* BookTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B65685EB2360400100B9157C /* BookTableViewCell.xib */; };
 		B65685F12360478100B9157C /* EJHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = B65685F02360478100B9157C /* EJHTTPClient.m */; };
-		B65685F523604D8400B9157C /* Book.m in Sources */ = {isa = PBXBuildFile; fileRef = B65685F423604D8400B9157C /* Book.m */; };
-		B65685F823604F9000B9157C /* BookInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = B65685F723604F9000B9157C /* BookInfo.m */; };
-		B65685FE236050AF00B9157C /* SearchResult.m in Sources */ = {isa = PBXBuildFile; fileRef = B65685FD236050AF00B9157C /* SearchResult.m */; };
-		B6568601236050E600B9157C /* NewBooks.m in Sources */ = {isa = PBXBuildFile; fileRef = B6568600236050E600B9157C /* NewBooks.m */; };
+		B678FC0B23616FF200D092D0 /* EJInfoBook.m in Sources */ = {isa = PBXBuildFile; fileRef = B678FC0A23616FF200D092D0 /* EJInfoBook.m */; };
+		B678FC0E2361797700D092D0 /* EJNewBooks.m in Sources */ = {isa = PBXBuildFile; fileRef = B678FC0D2361797700D092D0 /* EJNewBooks.m */; };
 		BAE9AF5A2C6DDF1CB878E341 /* Pods_EJBookShelfTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10E45F799C5C16036B8BEDC9 /* Pods_EJBookShelfTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -67,14 +65,10 @@
 		B65685EB2360400100B9157C /* BookTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookTableViewCell.xib; sourceTree = "<group>"; };
 		B65685EF2360478100B9157C /* EJHTTPClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EJHTTPClient.h; sourceTree = "<group>"; };
 		B65685F02360478100B9157C /* EJHTTPClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EJHTTPClient.m; sourceTree = "<group>"; };
-		B65685F323604D8400B9157C /* Book.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Book.h; sourceTree = "<group>"; };
-		B65685F423604D8400B9157C /* Book.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Book.m; sourceTree = "<group>"; };
-		B65685F623604F9000B9157C /* BookInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BookInfo.h; sourceTree = "<group>"; };
-		B65685F723604F9000B9157C /* BookInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BookInfo.m; sourceTree = "<group>"; };
-		B65685FC236050AF00B9157C /* SearchResult.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchResult.h; sourceTree = "<group>"; };
-		B65685FD236050AF00B9157C /* SearchResult.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchResult.m; sourceTree = "<group>"; };
-		B65685FF236050E600B9157C /* NewBooks.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewBooks.h; sourceTree = "<group>"; };
-		B6568600236050E600B9157C /* NewBooks.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewBooks.m; sourceTree = "<group>"; };
+		B678FC0923616FF200D092D0 /* EJInfoBook.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EJInfoBook.h; sourceTree = "<group>"; };
+		B678FC0A23616FF200D092D0 /* EJInfoBook.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EJInfoBook.m; sourceTree = "<group>"; };
+		B678FC0C2361797700D092D0 /* EJNewBooks.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EJNewBooks.h; sourceTree = "<group>"; };
+		B678FC0D2361797700D092D0 /* EJNewBooks.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EJNewBooks.m; sourceTree = "<group>"; };
 		B8434BB5A0DA4D6005DE0009 /* Pods_EJBookShelf.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EJBookShelf.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -182,14 +176,10 @@
 		B65685F223604D3B00B9157C /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				B65685F323604D8400B9157C /* Book.h */,
-				B65685F423604D8400B9157C /* Book.m */,
-				B65685F623604F9000B9157C /* BookInfo.h */,
-				B65685F723604F9000B9157C /* BookInfo.m */,
-				B65685FC236050AF00B9157C /* SearchResult.h */,
-				B65685FD236050AF00B9157C /* SearchResult.m */,
-				B65685FF236050E600B9157C /* NewBooks.h */,
-				B6568600236050E600B9157C /* NewBooks.m */,
+				B678FC0923616FF200D092D0 /* EJInfoBook.h */,
+				B678FC0A23616FF200D092D0 /* EJInfoBook.m */,
+				B678FC0C2361797700D092D0 /* EJNewBooks.h */,
+				B678FC0D2361797700D092D0 /* EJNewBooks.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -374,16 +364,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				B65685CB23603A5600B9157C /* main.m in Sources */,
-				B6568601236050E600B9157C /* NewBooks.m in Sources */,
-				B65685F523604D8400B9157C /* Book.m in Sources */,
 				B65685C323603A5500B9157C /* EJBookShelf.xcdatamodeld in Sources */,
 				B65685E123603B3600B9157C /* NewViewController.m in Sources */,
 				B65685E423603B4C00B9157C /* SearchViewController.m in Sources */,
+				B678FC0E2361797700D092D0 /* EJNewBooks.m in Sources */,
 				B65685B723603A5500B9157C /* AppDelegate.m in Sources */,
 				B65685EC2360400100B9157C /* BookTableViewCell.m in Sources */,
+				B678FC0B23616FF200D092D0 /* EJInfoBook.m in Sources */,
 				B65685E723603B5D00B9157C /* DetailViewController.m in Sources */,
-				B65685FE236050AF00B9157C /* SearchResult.m in Sources */,
-				B65685F823604F9000B9157C /* BookInfo.m in Sources */,
 				B65685F12360478100B9157C /* EJHTTPClient.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

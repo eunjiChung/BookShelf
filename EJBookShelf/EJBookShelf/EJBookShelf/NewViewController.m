@@ -10,12 +10,14 @@
 #import "BookTableViewCell.h"
 #import "DetailViewController.h"
 #import "EJHTTPClient.h"
+#import "EJNewBooks.h"
 #import <AFNetworking.h>
 
 @interface NewViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (strong, nonatomic) EJHTTPClient *httpClient;
+@property (assign, nonatomic) NSInteger *total;
+@property (assign, nonatomic) NSArray *list;
 
 @end
 
@@ -31,31 +33,40 @@
 
 // MARK: - Request Method
 - (void)callNewBookList {
-    NSLog(@"Calling New Book List");
-    
-    NSURL *URL = [NSURL URLWithString:@"https://api.itbook.store/1.0/new"];
-    
-    AFHTTPSessionManager *sessionManager = [[AFHTTPSessionManager alloc]initWithSessionConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
-    sessionManager.requestSerializer = [AFJSONRequestSerializer serializer];
-    [sessionManager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-    
-    [sessionManager GET:URL.absoluteString parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSDictionary *newBooks = responseObject;
-        NSString *total = newBooks[@"total"];
+    [[EJHTTPClient sharedInstance] requestNewBookStore:^(id  _Nonnull result) {
+        NSDictionary *dict = result;
+        EJNewBooks *newBookList = [EJNewBooks modelObjectWithDictionary:dict];
         
-        NSLog(@"%@", total);
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        if ([newBookList.error isEqualToString:@"0"]) {
+            self.total = newBookList.total;
+            self.list = newBookList.books;
+        } else {
+            self.total = 1;
+        }
+        
+        [self.tableView reloadData];
+    } failure:^(NSError * _Nonnull error) {
         NSLog(@"%@", error.localizedDescription);
     }];
 }
 
 // MARK: - TableView Data Source
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 10;
+    return self.total;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     BookTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BookTableViewCell" forIndexPath:indexPath];
+    
+    NSLog(@"Book List: %@", self.list);
+    
+//    if(self.bookList != nil) {
+//        EJInfoBook *oneBook = self.bookList[indexPath.row];
+//        cell.book = oneBook;
+//        NSString *bookTitle = oneBook.title;
+//        NSLog(@"Title : %@", bookTitle);
+//    }
+    
     return cell;
 }
 

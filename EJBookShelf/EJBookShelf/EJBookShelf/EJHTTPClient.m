@@ -15,22 +15,32 @@ NSString *bookDetailURL = @"https://api.itbook.store/1.0/books/";
 
 @implementation EJHTTPClient
 
+// MARK: - Shared Instance
++ (instancetype)sharedInstance
+{
+    static EJHTTPClient *_sharedInstance = nil;
+    static dispatch_once_t oncePredicate; //...
+    
+    dispatch_once(&oncePredicate, ^{
+        _sharedInstance = [[EJHTTPClient alloc] init];
+    });
+    
+    return _sharedInstance;
+}
+
+
+// MARK: - API Call
 - (void)requestNewBookStore:(void (^)(id result))success
                     failure:(void (^)(NSError *error))failure
 {
-    NSLog(@"Trying New Book List");
-    
     NSURL *URL = [NSURL URLWithString:bookStoreNewURL];
-    
     AFHTTPSessionManager *sessionManager = [[AFHTTPSessionManager alloc]initWithSessionConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
     sessionManager.requestSerializer = [AFJSONRequestSerializer serializer];
     [sessionManager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     
     NSURLSessionDataTask *task = [sessionManager GET:URL.absoluteString parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSLog(@"%@", responseObject);
         success(responseObject);
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        NSLog(@"%@", error.localizedDescription);
         failure(error);
     }];
     

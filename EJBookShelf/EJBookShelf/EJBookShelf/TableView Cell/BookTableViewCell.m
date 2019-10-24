@@ -15,10 +15,12 @@
     // Initialization code
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
+- (void)generateBookCell {
+    self.bookTitleLabel.text = self.book.title;
+    self.bookSubTitleLabel.text = self.book.subtitle;
+    self.bookPriceLabel.text = self.book.price;
+    self.bookIsbnLabel.text = self.book.isbn13;
+    self.bookUrlLabel.text = self.book.url;
 }
 
 @end
