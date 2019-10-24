@@ -8,15 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
-@class EJInfoBook;
-
 NS_ASSUME_NONNULL_BEGIN
 
 @interface EJNewBooks : NSObject <NSCoding, NSCopying>
 
 @property (nonatomic, copy)     NSString                *error;
-@property (nonatomic, assign)   NSInteger               *total;
-@property (nonatomic, copy)     NSArray<EJInfoBook *>   *books;
+@property (nonatomic, assign)   NSInteger               total;
+@property (nonatomic, copy)     NSArray<NSDictionary *>   *books;
 
 + (instancetype)modelObjectWithDictionary:(NSDictionary *)dict;
 - (instancetype)initWithDictionary:(NSDictionary *)dict;

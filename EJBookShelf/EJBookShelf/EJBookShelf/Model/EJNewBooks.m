@@ -7,7 +7,6 @@
 //
 
 #import "EJNewBooks.h"
-#import "EJInfoBook.h"
 
 NSString *const kNewBooksError = @"error";
 NSString *const kNewBooksTotal = @"total";
@@ -34,21 +33,7 @@ NSString *const kNewBooksBooks = @"books";
     if(self && [dict isKindOfClass:[NSDictionary class]]) {
         self.error = [self objectOrNilForKey:kNewBooksError fromDictionary:dict];
         self.total = [[self objectOrNilForKey:kNewBooksTotal fromDictionary:dict] integerValue];
-        
-        NSObject *receivedBooks = [dict objectForKey:kNewBooksBooks];
-        NSMutableArray *parsedEJInfoBook = [NSMutableArray array];
-        if ([receivedBooks isKindOfClass:[NSArray class]])
-        {
-            for (NSDictionary *item in (NSArray *)receivedBooks) {
-                if ([item isKindOfClass:[NSDictionary class]]) {
-                    [parsedEJInfoBook addObject:[EJInfoBook modelObjectWithDictionary: item]];
-                }
-            }
-        } else if ([receivedBooks isKindOfClass:[NSDictionary class]])
-        {
-            [parsedEJInfoBook addObject:[EJInfoBook modelObjectWithDictionary:(NSDictionary *)receivedBooks]];
-        }
-        self.books = [NSArray arrayWithArray:parsedEJInfoBook];
+        self.books = [self objectOrNilForKey:kNewBooksBooks fromDictionary:dict];
     }
     
     return self;
@@ -60,18 +45,7 @@ NSString *const kNewBooksBooks = @"books";
     NSMutableDictionary *mutableDict = [NSMutableDictionary dictionary];
     [mutableDict setValue:self.error forKey:kNewBooksError];
     [mutableDict setValue:[NSNumber numberWithInteger:self.total] forKey:kNewBooksTotal];
-    
-    NSMutableArray *tempArrayForNewBooks = [NSMutableArray array];
-    for (NSObject *subArrayObject in self.books) {
-        if([subArrayObject respondsToSelector:@selector(dictionaryRepresentation)]) {
-            // This class is a model object
-            [tempArrayForNewBooks addObject:[subArrayObject performSelector:@selector(dictionaryRepresentation)]];
-        } else {
-            // Generic object
-            [tempArrayForNewBooks addObject:subArrayObject];
-        }
-    }
-    [mutableDict setValue:[NSArray arrayWithArray:tempArrayForNewBooks] forKey:kNewBooksBooks];
+    [mutableDict setValue:self.books forKey:kNewBooksBooks];
 
     return [NSDictionary dictionaryWithDictionary:mutableDict];
 }
