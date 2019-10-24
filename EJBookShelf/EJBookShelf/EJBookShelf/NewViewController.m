@@ -17,7 +17,7 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (assign, nonatomic) NSInteger *total;
-@property (assign, nonatomic) NSArray *list;
+@property (assign, nonatomic) NSArray<EJInfoBook *> *list;
 
 @end
 
@@ -40,11 +40,11 @@
         if ([newBookList.error isEqualToString:@"0"]) {
             self.total = newBookList.total;
             self.list = newBookList.books;
+            [self.tableView reloadData];
         } else {
             self.total = 1;
+            [self.tableView reloadData];
         }
-        
-        [self.tableView reloadData];
     } failure:^(NSError * _Nonnull error) {
         NSLog(@"%@", error.localizedDescription);
     }];
@@ -58,14 +58,10 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     BookTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BookTableViewCell" forIndexPath:indexPath];
     
-    NSLog(@"Book List: %@", self.list);
-    
-//    if(self.bookList != nil) {
-//        EJInfoBook *oneBook = self.bookList[indexPath.row];
-//        cell.book = oneBook;
-//        NSString *bookTitle = oneBook.title;
-//        NSLog(@"Title : %@", bookTitle);
-//    }
+    if(self.list != nil) {
+        NSLog(@"Test : %@ on %zd", self.list[indexPath.row], indexPath.row);
+
+    }
     
     return cell;
 }

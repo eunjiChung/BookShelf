@@ -34,7 +34,6 @@ NSString *const kNewBooksBooks = @"books";
     if(self && [dict isKindOfClass:[NSDictionary class]]) {
         self.error = [self objectOrNilForKey:kNewBooksError fromDictionary:dict];
         self.total = [[self objectOrNilForKey:kNewBooksTotal fromDictionary:dict] integerValue];
-        self.books = [self objectOrNilForKey:kNewBooksBooks fromDictionary:dict];
         
         NSObject *receivedBooks = [dict objectForKey:kNewBooksBooks];
         NSMutableArray *parsedEJInfoBook = [NSMutableArray array];
