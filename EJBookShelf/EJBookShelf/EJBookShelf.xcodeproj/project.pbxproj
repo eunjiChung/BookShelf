@@ -11,9 +11,9 @@
 		7237388323628EFE0001AFF8 /* TestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7237388223628EFE0001AFF8 /* TestModel.m */; };
 		7237388823629F370001AFF8 /* ResultInfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7237388623629F370001AFF8 /* ResultInfoTableViewCell.m */; };
 		7237388923629F370001AFF8 /* ResultInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7237388723629F370001AFF8 /* ResultInfoTableViewCell.xib */; };
-		7237388C2362AF9E0001AFF8 /* DetailBookImageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7237388B2362AF9E0001AFF8 /* DetailBookImageTableViewCell.m */; };
-		7237388F2362AFD80001AFF8 /* DetailBookInfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7237388E2362AFD80001AFF8 /* DetailBookInfoTableViewCell.m */; };
-		723738922362B0260001AFF8 /* DetailBookDescTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 723738912362B0260001AFF8 /* DetailBookDescTableViewCell.m */; };
+		728DE9252362DB8A0019EF78 /* DetailBookImageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 728DE9212362DB8A0019EF78 /* DetailBookImageTableViewCell.m */; };
+		728DE9262362DB8A0019EF78 /* DetailBookInfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 728DE91F2362DB8A0019EF78 /* DetailBookInfoTableViewCell.m */; };
+		728DE9272362DB8A0019EF78 /* DetailBookDescTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 728DE9222362DB8A0019EF78 /* DetailBookDescTableViewCell.m */; };
 		B65685B723603A5500B9157C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B65685B623603A5500B9157C /* AppDelegate.m */; };
 		B65685C023603A5500B9157C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B65685BE23603A5500B9157C /* Main.storyboard */; };
 		B65685C323603A5500B9157C /* EJBookShelf.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B65685C123603A5500B9157C /* EJBookShelf.xcdatamodeld */; };
@@ -49,12 +49,12 @@
 		7237388523629F370001AFF8 /* ResultInfoTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ResultInfoTableViewCell.h; sourceTree = "<group>"; };
 		7237388623629F370001AFF8 /* ResultInfoTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ResultInfoTableViewCell.m; sourceTree = "<group>"; };
 		7237388723629F370001AFF8 /* ResultInfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResultInfoTableViewCell.xib; sourceTree = "<group>"; };
-		7237388A2362AF9E0001AFF8 /* DetailBookImageTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailBookImageTableViewCell.h; sourceTree = "<group>"; };
-		7237388B2362AF9E0001AFF8 /* DetailBookImageTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailBookImageTableViewCell.m; sourceTree = "<group>"; };
-		7237388D2362AFD80001AFF8 /* DetailBookInfoTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailBookInfoTableViewCell.h; sourceTree = "<group>"; };
-		7237388E2362AFD80001AFF8 /* DetailBookInfoTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailBookInfoTableViewCell.m; sourceTree = "<group>"; };
-		723738902362B0260001AFF8 /* DetailBookDescTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailBookDescTableViewCell.h; sourceTree = "<group>"; };
-		723738912362B0260001AFF8 /* DetailBookDescTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailBookDescTableViewCell.m; sourceTree = "<group>"; };
+		728DE91F2362DB8A0019EF78 /* DetailBookInfoTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = DetailBookInfoTableViewCell.m; path = "/Users/CHUNGEUNJI/Documents/EJ/BookShelf/EJBookShelf/EJBookShelf/EJBookShelf/TableView Cell/DetailBookInfoTableViewCell.m"; sourceTree = "<absolute>"; };
+		728DE9202362DB8A0019EF78 /* DetailBookDescTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = DetailBookDescTableViewCell.h; path = "/Users/CHUNGEUNJI/Documents/EJ/BookShelf/EJBookShelf/EJBookShelf/EJBookShelf/TableView Cell/DetailBookDescTableViewCell.h"; sourceTree = "<absolute>"; };
+		728DE9212362DB8A0019EF78 /* DetailBookImageTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = DetailBookImageTableViewCell.m; path = "/Users/CHUNGEUNJI/Documents/EJ/BookShelf/EJBookShelf/EJBookShelf/EJBookShelf/TableView Cell/DetailBookImageTableViewCell.m"; sourceTree = "<absolute>"; };
+		728DE9222362DB8A0019EF78 /* DetailBookDescTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = DetailBookDescTableViewCell.m; path = "/Users/CHUNGEUNJI/Documents/EJ/BookShelf/EJBookShelf/EJBookShelf/EJBookShelf/TableView Cell/DetailBookDescTableViewCell.m"; sourceTree = "<absolute>"; };
+		728DE9232362DB8A0019EF78 /* DetailBookImageTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = DetailBookImageTableViewCell.h; path = "/Users/CHUNGEUNJI/Documents/EJ/BookShelf/EJBookShelf/EJBookShelf/EJBookShelf/TableView Cell/DetailBookImageTableViewCell.h"; sourceTree = "<absolute>"; };
+		728DE9242362DB8A0019EF78 /* DetailBookInfoTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = DetailBookInfoTableViewCell.h; path = "/Users/CHUNGEUNJI/Documents/EJ/BookShelf/EJBookShelf/EJBookShelf/EJBookShelf/TableView Cell/DetailBookInfoTableViewCell.h"; sourceTree = "<absolute>"; };
 		73828A66E46DDC9B25E7FF02 /* Pods-EJBookShelfTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EJBookShelfTests.release.xcconfig"; path = "Target Support Files/Pods-EJBookShelfTests/Pods-EJBookShelfTests.release.xcconfig"; sourceTree = "<group>"; };
 		764BF9F240459D94CBBB7454 /* Pods-EJBookShelf.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EJBookShelf.release.xcconfig"; path = "Target Support Files/Pods-EJBookShelf/Pods-EJBookShelf.release.xcconfig"; sourceTree = "<group>"; };
 		B65685B223603A5500B9157C /* EJBookShelf.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EJBookShelf.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -185,18 +185,18 @@
 		B65685EE2360400600B9157C /* TableView Cell */ = {
 			isa = PBXGroup;
 			children = (
+				728DE9202362DB8A0019EF78 /* DetailBookDescTableViewCell.h */,
+				728DE9222362DB8A0019EF78 /* DetailBookDescTableViewCell.m */,
+				728DE9232362DB8A0019EF78 /* DetailBookImageTableViewCell.h */,
+				728DE9212362DB8A0019EF78 /* DetailBookImageTableViewCell.m */,
+				728DE9242362DB8A0019EF78 /* DetailBookInfoTableViewCell.h */,
+				728DE91F2362DB8A0019EF78 /* DetailBookInfoTableViewCell.m */,
 				B65685E92360400100B9157C /* BookTableViewCell.h */,
 				B65685EA2360400100B9157C /* BookTableViewCell.m */,
 				B65685EB2360400100B9157C /* BookTableViewCell.xib */,
 				7237388523629F370001AFF8 /* ResultInfoTableViewCell.h */,
 				7237388623629F370001AFF8 /* ResultInfoTableViewCell.m */,
 				7237388723629F370001AFF8 /* ResultInfoTableViewCell.xib */,
-				7237388A2362AF9E0001AFF8 /* DetailBookImageTableViewCell.h */,
-				7237388B2362AF9E0001AFF8 /* DetailBookImageTableViewCell.m */,
-				7237388D2362AFD80001AFF8 /* DetailBookInfoTableViewCell.h */,
-				7237388E2362AFD80001AFF8 /* DetailBookInfoTableViewCell.m */,
-				723738902362B0260001AFF8 /* DetailBookDescTableViewCell.h */,
-				723738912362B0260001AFF8 /* DetailBookDescTableViewCell.m */,
 			);
 			path = "TableView Cell";
 			sourceTree = "<group>";
@@ -392,14 +392,14 @@
 			files = (
 				B65685CB23603A5600B9157C /* main.m in Sources */,
 				B65685C323603A5500B9157C /* EJBookShelf.xcdatamodeld in Sources */,
-				7237388C2362AF9E0001AFF8 /* DetailBookImageTableViewCell.m in Sources */,
+				728DE9252362DB8A0019EF78 /* DetailBookImageTableViewCell.m in Sources */,
 				B65685E123603B3600B9157C /* NewViewController.m in Sources */,
 				B65685E423603B4C00B9157C /* SearchViewController.m in Sources */,
-				7237388F2362AFD80001AFF8 /* DetailBookInfoTableViewCell.m in Sources */,
+				728DE9262362DB8A0019EF78 /* DetailBookInfoTableViewCell.m in Sources */,
 				7237388823629F370001AFF8 /* ResultInfoTableViewCell.m in Sources */,
 				B65685B723603A5500B9157C /* AppDelegate.m in Sources */,
 				B65685EC2360400100B9157C /* BookTableViewCell.m in Sources */,
-				723738922362B0260001AFF8 /* DetailBookDescTableViewCell.m in Sources */,
+				728DE9272362DB8A0019EF78 /* DetailBookDescTableViewCell.m in Sources */,
 				7237388323628EFE0001AFF8 /* TestModel.m in Sources */,
 				B65685E723603B5D00B9157C /* DetailViewController.m in Sources */,
 				B65685F12360478100B9157C /* EJHTTPClient.m in Sources */,

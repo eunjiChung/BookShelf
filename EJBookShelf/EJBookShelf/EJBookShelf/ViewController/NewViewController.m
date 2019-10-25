@@ -78,7 +78,6 @@
     if ([segue.identifier  isEqual:@"new_detail_segue"]) {
         DetailViewController *destination = segue.destinationViewController;
         NSIndexPath *selectedIndexPath = sender;
-//        NSLog(@"Send book info %@ from %zd in %@", destination, selectedIndexPath.row, self.list[selectedIndexPath.row]);
         NSDictionary *book = self.list[selectedIndexPath.row];
         destination.isbn13 = book[@"isbn13"];
     }

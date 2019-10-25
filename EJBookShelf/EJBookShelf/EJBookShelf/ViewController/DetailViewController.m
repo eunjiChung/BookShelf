@@ -12,6 +12,7 @@
 #import "DetailBookDescTableViewCell.h"
 #import "DetailBookInfoTableViewCell.h"
 #import "DetailBookImageTableViewCell.h"
+#import "UIImageView+AFNetworking.h"
 
 @interface DetailViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -25,7 +26,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self.tableview registerNib:[UINib nibWithNibName:@"BookTableViewCell" bundle:nil] forCellReuseIdentifier:@"BookTableViewCell"];
     [self callBookInfo];
 }
 
@@ -53,19 +53,30 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    switch (indexPath.row) {
-        case 0:
-            DetailBookImageTableViewCell *cell
-            DetailBookImageTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ResultInfoTableViewCell" forIndexPath:indexPath];
-            return cell;
-            break;
-        case 1:
-            break;
-        case 2:
-            break;
-        default:
-            NSLog(@"No Cell");
-            break;
+    
+    if (indexPath.row == 0) {
+        DetailBookImageTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DetailBookImageTableViewCell" forIndexPath:indexPath];
+        [cell.bookImageView setImageWithURL:[NSURL URLWithString:self.bookInfo[@"image"]]];
+        return cell;
+    } else if (indexPath.row == 1) {
+        DetailBookInfoTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DetailBookInfoTableViewCell" forIndexPath:indexPath];
+        
+        cell.bookTitleLabel.text = self.bookInfo[@"title"];
+        cell.bookSubtitleLabel.text = self.bookInfo[@"subtitle"];
+        cell.bookPriceLabel.text = self.bookInfo[@"price"];
+        cell.bookAuthorLabel.text = self.bookInfo[@"authors"];
+        cell.bookPublisherLabel.text = self.bookInfo[@"publisher"];
+        cell.bookYear.text = self.bookInfo[@"year"];
+        cell.bookPages.text = self.bookInfo[@"pages"];
+        cell.bookIsbn10Label.text = self.bookInfo[@"isbn10"];
+        cell.bookIsbn13Label.text = self.bookInfo[@"isbn13"];
+        cell.bookLanguage.text = self.bookInfo[@"language"];
+        
+        return cell;
+    } else if (indexPath.row == 2) {
+        DetailBookDescTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DetailBookDescTableViewCell" forIndexPath:indexPath];
+        cell.descTextLabel.text = self.bookInfo[@"desc"];
+        return cell;
     }
     
     return [[UITableViewCell alloc] init];

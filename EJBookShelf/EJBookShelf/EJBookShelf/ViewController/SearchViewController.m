@@ -37,9 +37,10 @@
     [[EJHTTPClient sharedInstance] requestSearchBookStore:keyword success:^(id  _Nonnull result) {
         NSDictionary *dict = (NSDictionary *)result;
         self.total = [dict[@"total"] integerValue];
-        NSLog(@"Result : %@", dict);
+        
         NSMutableArray *array = (NSMutableArray *) dict[@"books"];
         self.list = [array mutableCopy];
+        
         [self.tableView reloadData];
     } failure:^(NSError * _Nonnull error) {
         NSLog(@"Error: %@", error.localizedDescription);
