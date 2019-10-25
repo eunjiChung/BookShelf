@@ -105,15 +105,15 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="801"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DetailBookImageTableViewCell" rowHeight="196" id="GUt-qf-AXp" customClass="DetailBookImageTableViewCell">
-                                                <rect key="frame" x="0.0" y="28" width="414" height="196"/>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DetailBookImageTableViewCell" rowHeight="300" id="GUt-qf-AXp" customClass="DetailBookImageTableViewCell">
+                                                <rect key="frame" x="0.0" y="28" width="414" height="300"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="GUt-qf-AXp" id="YTr-IX-yiS">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="196"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="300"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rxP-cN-ZAT">
-                                                            <rect key="frame" x="20" y="11" width="374" height="174"/>
+                                                            <rect key="frame" x="20" y="11" width="374" height="278"/>
                                                         </imageView>
                                                     </subviews>
                                                     <constraints>
@@ -128,7 +128,7 @@
                                                 </connections>
                                             </tableViewCell>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DetailBookInfoTableViewCell" rowHeight="239" id="r4d-5C-uha" customClass="DetailBookInfoTableViewCell">
-                                                <rect key="frame" x="0.0" y="224" width="414" height="239"/>
+                                                <rect key="frame" x="0.0" y="328" width="414" height="239"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="r4d-5C-uha" id="slP-3i-cB6">
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="239"/>
@@ -272,7 +272,7 @@
                                                 </connections>
                                             </tableViewCell>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DetailBookDescTableViewCell" rowHeight="139" id="UtC-Bf-Jl0" customClass="DetailBookDescTableViewCell">
-                                                <rect key="frame" x="0.0" y="463" width="414" height="139"/>
+                                                <rect key="frame" x="0.0" y="567" width="414" height="139"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="UtC-Bf-Jl0" id="pLs-26-ESn">
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="139"/>
@@ -426,6 +426,6 @@
         <image name="magnifyingglass" catalog="system" width="64" height="56"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="0g9-I2-5hX"/>
+        <segue reference="fbO-TW-hfo"/>
     </inferredMetricsTieBreakers>
 </document>

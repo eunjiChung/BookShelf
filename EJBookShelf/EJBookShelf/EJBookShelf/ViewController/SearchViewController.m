@@ -11,20 +11,24 @@
 #import "ResultInfoTableViewCell.h"
 #import "EJHTTPClient.h"
 #import "UIImageView+AFNetworking.h"
+#import "DetailViewController.h"
 #import <SVPullToRefresh.h>
 
 @interface SearchViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
-@property (strong, nonatomic) NSMutableArray *list;
-@property (assign, nonatomic) NSInteger total;
-@property (assign, nonatomic) NSInteger page; // 현재 몇 쪽인지
-@property (assign, nonatomic) NSString *keyword;
+@property (strong, nonatomic) NSMutableArray *list; // 가져오는 책 결과 리스트
+@property (assign, nonatomic) NSInteger total;      // 총 페이지 수
+@property (assign, nonatomic) NSInteger page;       // 현재 몇 쪽인지
+@property (assign, nonatomic) NSString *keyword;    // 검색 키워드
 
 @end
 
 @implementation SearchViewController
+
+
+#pragma mark - View Life Cycle
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -41,7 +45,9 @@
     [self addInfiniteScrollingControl];
 }
 
+
 #pragma mark - Call API
+
 - (void)callBySearchKeyword:(NSString *)keyword {
     [[EJHTTPClient sharedInstance] requestSearchBookStore:keyword page:self.page success:^(id  _Nonnull result) {
         NSDictionary *dict = (NSDictionary *)result;
@@ -60,7 +66,7 @@
         [self.tableView.pullToRefreshView stopAnimating];
         [self.tableView.infiniteScrollingView stopAnimating];
     } failure:^(NSError * _Nonnull error) {
-        NSLog(@"Error: %@", error.localizedDescription);
+        [self showErrorAlert:error];
     }];
 }
 
@@ -96,7 +102,11 @@
             NSDictionary *bookInfo = self.list[indexPath.row];
             [cell.bookImageView setImageWithURL:[NSURL URLWithString:bookInfo[@"image"]]];
             cell.bookTitleLabel.text = bookInfo[@"title"];
-            cell.bookSubTitleLabel.text = bookInfo[@"subtitle"];
+            
+            if (![bookInfo[@"subtitle"] isEqual:@""]) {
+                cell.bookSubTitleLabel.text = bookInfo[@"subtitle"];
+            }
+            
             cell.bookPriceLabel.text = bookInfo[@"price"];
             cell.bookIsbnLabel.text = bookInfo[@"isbn13"];
             cell.bookUrlLabel.text = bookInfo[@"url"];
@@ -106,6 +116,21 @@
     }
     
     return [[UITableViewCell alloc] init];
+}
+
+#pragma mark - TableView Delegate
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [self performSegueWithIdentifier:@"search_detail_segue" sender:indexPath];
+}
+
+#pragma mark - Segue Action
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqual:@"search_detail_segue"]) {
+        DetailViewController *destination = segue.destinationViewController;
+        NSIndexPath *selectedIndexPath = sender;
+        NSDictionary *book = self.list[selectedIndexPath.row];
+        destination.isbn13 = book[@"isbn13"];
+    }
 }
 
 #pragma mark - Private Method

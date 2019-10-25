@@ -8,12 +8,9 @@
 
 #import "NewViewController.h"
 #import "BookTableViewCell.h"
-#import "DetailViewController.h"
 #import "EJHTTPClient.h"
 #import "UIImageView+AFNetworking.h"
-
-
-#import "TestModel.h"
+#import "DetailViewController.h"
 
 @interface NewViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -44,7 +41,7 @@
         self.list = [array mutableCopy];
         [self.tableView reloadData];
     } failure:^(NSError * _Nonnull error) {
-        NSLog(@"Error : %@", error.localizedDescription);
+        [self showErrorAlert:error];
     }];
 }
 
@@ -74,6 +71,7 @@
     return 193.0;
 }
 
+#pragma mark - Segue Action
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier  isEqual:@"new_detail_segue"]) {
         DetailViewController *destination = segue.destinationViewController;

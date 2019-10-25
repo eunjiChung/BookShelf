@@ -36,7 +36,7 @@
         self.bookInfo = dict;
         [self.tableview reloadData];
     } failure:^(NSError * _Nonnull error) {
-        NSLog(@"Error: %@", error);
+        [self showErrorAlert:error];
     }];
 }
 
@@ -79,6 +79,13 @@
     }
     
     return [[UITableViewCell alloc] init];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.row == 0) {
+        return 300.0;
+    }
+    return UITableViewAutomaticDimension;
 }
 
 @end
