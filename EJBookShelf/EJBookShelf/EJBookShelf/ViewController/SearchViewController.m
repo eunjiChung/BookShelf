@@ -34,24 +34,11 @@
     
     self.total = 1;
     self.page = 1;
-    [self callBySearchKeyword:@"db"];
+    self.keyword = @"db";
+    [self callBySearchKeyword:self.keyword];
     
-    [self.tableView addPullToRefreshWithActionHandler:^{
-        self.total = 1;
-        self.page = 1;
-        [self callBySearchKeyword:@"db"];
-    }];
-    
-    [self.tableView addInfiniteScrollingWithActionHandler:^{
-        self.page += 1;
-        
-        if ([self isEndOfPage]) {
-            [self.tableView.infiniteScrollingView stopAnimating];
-        } else {
-            [self callBySearchKeyword:@"db"];
-        }
-    }];
-    
+    [self addPullToRefreshControl];
+    [self addInfiniteScrollingControl];
 }
 
 #pragma mark - Call API
@@ -62,18 +49,16 @@
         
         NSMutableArray *array = (NSMutableArray *) dict[@"books"];
         if (self.list == nil) {
-            NSLog(@"1");
             self.list = [array mutableCopy];
         } else {
-            NSLog(@"2");
             [self.list addObjectsFromArray:array];
         }
-        //        NSLog(@"List: %@", self.list);
         
         self.page = [dict[@"page"] integerValue];
         
         [self.tableView reloadData];
         [self.tableView.pullToRefreshView stopAnimating];
+        [self.tableView.infiniteScrollingView stopAnimating];
     } failure:^(NSError * _Nonnull error) {
         NSLog(@"Error: %@", error.localizedDescription);
     }];
@@ -81,10 +66,7 @@
 
 // MARK: - TableView Data Source
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if (self.list == nil) {
-        return 1;
-    }
-    return self.list.count;
+    return (self.list == nil) ? 1 : self.list.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -127,6 +109,27 @@
 }
 
 #pragma mark - Private Method
+- (void)addPullToRefreshControl {
+    [self.tableView addPullToRefreshWithActionHandler:^{
+        self.total = 1;
+        self.page = 1;
+        self.list = nil;
+        [self callBySearchKeyword:self.keyword];
+    }];
+}
+
+- (void)addInfiniteScrollingControl {
+    [self.tableView addInfiniteScrollingWithActionHandler:^{
+        self.page += 1;
+        
+        if ([self isEndOfPage]) {
+            [self.tableView.infiniteScrollingView stopAnimating];
+        } else {
+            [self callBySearchKeyword:self.keyword];
+        }
+    }];
+}
+
 - (BOOL)isEndOfPage {
     NSInteger totalPage = (self.total % 10 != 0) ? (self.total / 10 + 1) : (self.total / 10);
     return self.page > totalPage ? YES : NO;
