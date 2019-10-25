@@ -11,6 +11,7 @@
 #import "ResultInfoTableViewCell.h"
 #import "EJHTTPClient.h"
 #import "UIImageView+AFNetworking.h"
+#import <SVPullToRefresh.h>
 
 @interface SearchViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -32,15 +33,30 @@
     [self registerNibForClass];
     
     self.total = 1;
-    self.page = 0;
-//    self.list = [[NSMutableArray alloc] init];
-    
+    self.page = 1;
     [self callBySearchKeyword:@"db"];
+    
+    [self.tableView addPullToRefreshWithActionHandler:^{
+        self.total = 1;
+        self.page = 1;
+        [self callBySearchKeyword:@"db"];
+    }];
+    
+    [self.tableView addInfiniteScrollingWithActionHandler:^{
+        self.page += 1;
+        
+        if ([self isEndOfPage]) {
+            [self.tableView.infiniteScrollingView stopAnimating];
+        } else {
+            [self callBySearchKeyword:@"db"];
+        }
+    }];
+    
 }
 
 #pragma mark - Call API
 - (void)callBySearchKeyword:(NSString *)keyword {
-    [[EJHTTPClient sharedInstance] requestSearchBookStore:keyword page:self.page+1 success:^(id  _Nonnull result) {
+    [[EJHTTPClient sharedInstance] requestSearchBookStore:keyword page:self.page success:^(id  _Nonnull result) {
         NSDictionary *dict = (NSDictionary *)result;
         self.total = [dict[@"total"] integerValue];
         
@@ -52,11 +68,12 @@
             NSLog(@"2");
             [self.list addObjectsFromArray:array];
         }
-//        NSLog(@"List: %@", self.list);
+        //        NSLog(@"List: %@", self.list);
         
         self.page = [dict[@"page"] integerValue];
         
         [self.tableView reloadData];
+        [self.tableView.pullToRefreshView stopAnimating];
     } failure:^(NSError * _Nonnull error) {
         NSLog(@"Error: %@", error.localizedDescription);
     }];
@@ -111,8 +128,8 @@
 
 #pragma mark - Private Method
 - (BOOL)isEndOfPage {
-    
-    return NO;
+    NSInteger totalPage = (self.total % 10 != 0) ? (self.total / 10 + 1) : (self.total / 10);
+    return self.page > totalPage ? YES : NO;
 }
 
 - (void)registerNibForClass {
