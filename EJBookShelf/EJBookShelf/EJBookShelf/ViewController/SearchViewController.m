@@ -18,6 +18,8 @@
 
 @property (strong, nonatomic) NSMutableArray *list;
 @property (assign, nonatomic) NSInteger total;
+@property (assign, nonatomic) NSInteger page; // 현재 몇 쪽인지
+@property (assign, nonatomic) NSString *keyword;
 
 @end
 
@@ -28,18 +30,31 @@
     
     // Initialize
     [self registerNibForClass];
+    
     self.total = 1;
-    [self callBySearchKeyword:@""];
+    self.page = 0;
+//    self.list = [[NSMutableArray alloc] init];
+    
+    [self callBySearchKeyword:@"db"];
 }
 
 #pragma mark - Call API
 - (void)callBySearchKeyword:(NSString *)keyword {
-    [[EJHTTPClient sharedInstance] requestSearchBookStore:keyword success:^(id  _Nonnull result) {
+    [[EJHTTPClient sharedInstance] requestSearchBookStore:keyword page:self.page+1 success:^(id  _Nonnull result) {
         NSDictionary *dict = (NSDictionary *)result;
         self.total = [dict[@"total"] integerValue];
         
         NSMutableArray *array = (NSMutableArray *) dict[@"books"];
-        self.list = [array mutableCopy];
+        if (self.list == nil) {
+            NSLog(@"1");
+            self.list = [array mutableCopy];
+        } else {
+            NSLog(@"2");
+            [self.list addObjectsFromArray:array];
+        }
+//        NSLog(@"List: %@", self.list);
+        
+        self.page = [dict[@"page"] integerValue];
         
         [self.tableView reloadData];
     } failure:^(NSError * _Nonnull error) {
@@ -49,7 +64,10 @@
 
 // MARK: - TableView Data Source
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.total;
+    if (self.list == nil) {
+        return 1;
+    }
+    return self.list.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -92,6 +110,11 @@
 }
 
 #pragma mark - Private Method
+- (BOOL)isEndOfPage {
+    
+    return NO;
+}
+
 - (void)registerNibForClass {
     [self.tableView registerNib:[UINib nibWithNibName:@"BookTableViewCell" bundle:nil] forCellReuseIdentifier:@"BookTableViewCell"];
     [self.tableView registerNib:[UINib nibWithNibName:@"ResultInfoTableViewCell" bundle:nil] forCellReuseIdentifier:@"ResultInfoTableViewCell"];

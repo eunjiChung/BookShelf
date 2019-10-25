@@ -48,10 +48,13 @@ NSString *bookDetailURL = @"https://api.itbook.store/1.0/books/";
 }
 
 - (void)requestSearchBookStore:(NSString *)keyword
+                          page:(NSInteger)page
                        success:(void (^)(id result))success
                        failure:(void (^)(NSError *error))failure {
-    NSString *bookSearchURL = [bookStoreSearchURL stringByAppendingString:keyword];
-    NSURL *URL = [NSURL URLWithString:bookSearchURL];
+    NSString *searchURL = [bookStoreSearchURL stringByAppendingString:keyword];
+    NSString *nextSearchURL = [searchURL stringByAppendingFormat:@"/%zd", page];
+    
+    NSURL *URL = [NSURL URLWithString:nextSearchURL];
     AFHTTPSessionManager *sessionManager = [AFHTTPSessionManager manager];
     
     sessionManager.requestSerializer = [AFJSONRequestSerializer serializer];
