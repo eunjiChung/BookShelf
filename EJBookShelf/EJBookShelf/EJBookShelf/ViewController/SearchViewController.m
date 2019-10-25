@@ -109,7 +109,11 @@
             
             cell.bookPriceLabel.text = bookInfo[@"price"];
             cell.bookIsbnLabel.text = bookInfo[@"isbn13"];
-            cell.bookUrlLabel.text = bookInfo[@"url"];
+            
+            NSString *url = bookInfo[@"url"];
+            NSMutableAttributedString * attributedString = [[NSMutableAttributedString alloc] initWithString:url];
+            [attributedString addAttribute:NSLinkAttributeName value:url range:NSMakeRange(0, url.length)];
+            cell.bookUrlTextView.attributedText = attributedString;
             
             return cell;
         }

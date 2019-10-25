@@ -71,6 +71,12 @@
         cell.bookIsbn13Label.text = self.bookInfo[@"isbn13"];
         cell.bookLanguage.text = self.bookInfo[@"language"];
         
+        NSString *url = self.bookInfo[@"url"];
+        NSMutableAttributedString * attributedString = [[NSMutableAttributedString alloc] initWithString:url];
+        [attributedString addAttribute:NSLinkAttributeName value:url range:NSMakeRange(0, url.length)];
+        cell.bookUrl.attributedText = attributedString;
+        
+        
         return cell;
     } else if (indexPath.row == 2) {
         DetailBookDescTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DetailBookDescTableViewCell" forIndexPath:indexPath];

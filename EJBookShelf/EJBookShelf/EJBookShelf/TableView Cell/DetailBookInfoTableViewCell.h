@@ -23,6 +23,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UILabel *bookPages;
 @property (weak, nonatomic) IBOutlet UILabel *bookYear;
 @property (weak, nonatomic) IBOutlet UILabel *bookLanguage;
+@property (weak, nonatomic) IBOutlet UITextView *bookUrl;
 
 
 @end
