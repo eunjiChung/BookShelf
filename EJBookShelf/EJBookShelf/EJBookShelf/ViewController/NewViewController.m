@@ -11,6 +11,8 @@
 #import "DetailViewController.h"
 #import "EJHTTPClient.h"
 #import <AFNetworking.h>
+#import "UIImageView+AFNetworking.h"
+
 
 #import "TestModel.h"
 
@@ -38,10 +40,9 @@
     
     [[EJHTTPClient sharedInstance] requestNewBookStore:^(id  _Nonnull result) {
         NSDictionary *dict = (NSDictionary *) result;
+        self.total = [dict[@"total"] integerValue];
         NSMutableArray *array = (NSMutableArray *) dict[@"books"];
         self.list = [array mutableCopy];
-        NSLog(@"SElf: %@", self.list);
-        
         [self.tableView reloadData];
     } failure:^(NSError * _Nonnull error) {
         NSLog(@"Error : %@", error.localizedDescription);
@@ -50,8 +51,7 @@
 
 // MARK: - TableView Data Source
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-//    return self.total;
-    return 10;
+    return self.total;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -59,7 +59,7 @@
     
     if (self.list.count > 0) {
         NSDictionary *bookInfo = self.list[indexPath.row];
-        // TODO: - 이미지 다운받아 넣기
+        [cell.bookImageView setImageWithURL:[NSURL URLWithString:bookInfo[@"image"]]];
         cell.bookTitleLabel.text = bookInfo[@"title"];
         cell.bookSubTitleLabel.text = bookInfo[@"subtitle"];
         cell.bookPriceLabel.text = bookInfo[@"price"];
