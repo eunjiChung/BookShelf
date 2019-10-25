@@ -54,7 +54,7 @@ NSString *bookDetailURL = @"https://api.itbook.store/1.0/books/";
     NSURL *URL = [NSURL URLWithString:bookSearchURL];
     AFHTTPSessionManager *sessionManager = [AFHTTPSessionManager manager];
     
-    [sessionManager GET:URL parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    [sessionManager GET:URL.absoluteString parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSLog(@"%@", responseObject);
         success(responseObject);
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
@@ -67,15 +67,13 @@ NSString *bookDetailURL = @"https://api.itbook.store/1.0/books/";
                       success:(void (^)(id result))success
                       failure:(void (^)(NSError *error))failure
 {
-    NSString *isbnUrl = [bookStoreSearchURL stringByAppendingString:@"9781484206485"];
+    NSString *isbnUrl = [bookDetailURL stringByAppendingString:isbnCode];
     NSURL *URL = [NSURL URLWithString:isbnUrl];
     AFHTTPSessionManager *sessionManager = [AFHTTPSessionManager manager];
     
-    [sessionManager GET:URL parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSLog(@"%@", responseObject);
+    [sessionManager GET:URL.absoluteString parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         success(responseObject);
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        NSLog(@"%@", error.localizedDescription);
         failure(error);
     }];
 }

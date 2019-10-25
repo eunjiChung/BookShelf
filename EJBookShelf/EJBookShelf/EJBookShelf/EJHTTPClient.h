@@ -21,6 +21,9 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)requestSearchBookStore:(NSString *)keyword
                        success:(void (^)(id result))success
                        failure:(void (^)(NSError *error))failure;
+- (void)requestDetailBookInfo:(NSString *)isbnCode
+                      success:(void (^)(id result))success
+                      failure:(void (^)(NSError *error))failure;
 @end
 
 NS_ASSUME_NONNULL_END

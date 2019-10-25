@@ -10,14 +10,15 @@
 #import "BookTableViewCell.h"
 #import "DetailViewController.h"
 #import "EJHTTPClient.h"
-#import "EJNewBooks.h"
 #import <AFNetworking.h>
+
+#import "TestModel.h"
 
 @interface NewViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (assign, nonatomic) NSInteger total;
-@property (assign, nonatomic) NSArray<NSDictionary *> *list;
+@property (strong, nonatomic) NSMutableArray *list;
 
 @end
 
@@ -28,44 +29,43 @@
     
     [self.tableView registerNib:[UINib nibWithNibName:@"BookTableViewCell" bundle:nil] forCellReuseIdentifier:@"BookTableViewCell"];
     
+    self.list = [[NSMutableArray alloc] init];
     [self callNewBookList];
 }
 
 // MARK: - Request Method
 - (void)callNewBookList {
+    
     [[EJHTTPClient sharedInstance] requestNewBookStore:^(id  _Nonnull result) {
-        NSDictionary *dict = result;
-        EJNewBooks *newBookList = [EJNewBooks modelObjectWithDictionary:dict];
+        NSDictionary *dict = (NSDictionary *) result;
+        NSMutableArray *array = (NSMutableArray *) dict[@"books"];
+        self.list = [array mutableCopy];
+        NSLog(@"SElf: %@", self.list);
         
-        if ([newBookList.error isEqualToString:@"0"]) {
-            self.total = newBookList.total;
-            self.list = newBookList.books;
-        } else {
-            self.total = 1;
-        }
-
         [self.tableView reloadData];
     } failure:^(NSError * _Nonnull error) {
-        NSLog(@"%@", error.localizedDescription);
+        NSLog(@"Error : %@", error.localizedDescription);
     }];
 }
 
 // MARK: - TableView Data Source
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.total;
+//    return self.total;
+    return 10;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     BookTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BookTableViewCell" forIndexPath:indexPath];
     
-    NSLog(@"%zd: indexpath", indexPath.row);
-//    EJInfoBook *book = [EJInfoBook modelObjectWithDictionary:self.list[indexPath.row]];
-//
-//    if(book != nil) {
-//        cell.book = book;
-//        cell.bookTitleLabel.text = book.title;
-//        NSLog(@"Title %zd: %@", indexPath.row, book.title);
-//    }
+    if (self.list.count > 0) {
+        NSDictionary *bookInfo = self.list[indexPath.row];
+        // TODO: - 이미지 다운받아 넣기
+        cell.bookTitleLabel.text = bookInfo[@"title"];
+        cell.bookSubTitleLabel.text = bookInfo[@"subtitle"];
+        cell.bookPriceLabel.text = bookInfo[@"price"];
+        cell.bookIsbnLabel.text = bookInfo[@"isbn13"];
+        cell.bookUrlLabel.text = bookInfo[@"url"];
+    }
     
     return cell;
 }

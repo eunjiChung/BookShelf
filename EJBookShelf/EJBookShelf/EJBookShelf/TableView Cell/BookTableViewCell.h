@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "EJInfoBook.h"
+//#import "EJBook.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -20,7 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UILabel *bookUrlLabel;
 @property (weak, nonatomic) IBOutlet UILabel *bookIsbnLabel;
 
-@property (nonatomic, assign) EJInfoBook *book;
+//@property (nonatomic, assign) EJBook *book;
 
 - (void)generateBookCell;
 
