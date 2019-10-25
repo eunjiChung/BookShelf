@@ -50,15 +50,16 @@ NSString *bookDetailURL = @"https://api.itbook.store/1.0/books/";
 - (void)requestSearchBookStore:(NSString *)keyword
                        success:(void (^)(id result))success
                        failure:(void (^)(NSError *error))failure {
-    NSString *bookSearchURL = [bookStoreSearchURL stringByAppendingString:@"mongoDB"];
+    NSString *bookSearchURL = [bookStoreSearchURL stringByAppendingString:keyword];
     NSURL *URL = [NSURL URLWithString:bookSearchURL];
     AFHTTPSessionManager *sessionManager = [AFHTTPSessionManager manager];
     
+    sessionManager.requestSerializer = [AFJSONRequestSerializer serializer];
+    [sessionManager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    
     [sessionManager GET:URL.absoluteString parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSLog(@"%@", responseObject);
         success(responseObject);
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        NSLog(@"%@", error.localizedDescription);
         failure(error);
     }];
 }
@@ -70,6 +71,9 @@ NSString *bookDetailURL = @"https://api.itbook.store/1.0/books/";
     NSString *isbnUrl = [bookDetailURL stringByAppendingString:isbnCode];
     NSURL *URL = [NSURL URLWithString:isbnUrl];
     AFHTTPSessionManager *sessionManager = [AFHTTPSessionManager manager];
+    
+    sessionManager.requestSerializer = [AFJSONRequestSerializer serializer];
+    [sessionManager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     
     [sessionManager GET:URL.absoluteString parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         success(responseObject);

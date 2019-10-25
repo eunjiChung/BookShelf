@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hId-oZ-KK7">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hId-oZ-KK7">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item-->
+        <!--New-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="NewViewController" sceneMemberID="viewController">
@@ -26,7 +26,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="foz-13-Bwq" firstAttribute="centerX" secondItem="1Ld-OJ-Dhr" secondAttribute="centerX" id="EVe-DO-lnX"/>
                                     <constraint firstAttribute="bottom" secondItem="foz-13-Bwq" secondAttribute="bottom" constant="15" id="T0S-CC-4fU"/>
@@ -54,7 +54,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="NGl-oV-DJa"/>
+                    <tabBarItem key="tabBarItem" title="New" image="book" catalog="system" id="NGl-oV-DJa"/>
                     <connections>
                         <outlet property="tableView" destination="LJZ-eZ-9JG" id="hOR-ii-p7Y"/>
                         <segue destination="gzs-nd-BEh" kind="presentation" identifier="new_detail_segue" modalPresentationStyle="fullScreen" id="0g9-I2-5hX"/>
@@ -89,7 +89,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="ZS9-6N-g3O" secondAttribute="trailing" constant="21" id="66w-fk-3dz"/>
                                     <constraint firstAttribute="height" constant="95" id="CZV-f1-HmQ"/>
@@ -139,7 +139,7 @@
             </objects>
             <point key="canvasLocation" x="3000.0000000000005" y="193.52678571428569"/>
         </scene>
-        <!--Item-->
+        <!--Search-->
         <scene sceneID="4OQ-Hq-t9O">
             <objects>
                 <viewController id="2gO-Cf-Til" customClass="SearchViewController" sceneMemberID="viewController">
@@ -157,7 +157,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="ESG-eK-Rxj" secondAttribute="bottom" constant="15" id="FUo-FH-RUY"/>
                                     <constraint firstItem="ESG-eK-Rxj" firstAttribute="centerX" secondItem="xKX-jM-0U6" secondAttribute="centerX" id="Oqd-az-KtY"/>
@@ -197,7 +197,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="jEC-SK-Oml"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="yNU-Zn-XXQ"/>
+                    <tabBarItem key="tabBarItem" title="Search" image="magnifyingglass" catalog="system" id="yNU-Zn-XXQ"/>
                     <connections>
                         <outlet property="tableView" destination="Z0x-el-5BA" id="2Ec-fq-m1x"/>
                         <segue destination="gzs-nd-BEh" kind="presentation" identifier="search_detail_segue" modalPresentationStyle="fullScreen" id="fbO-TW-hfo"/>
@@ -227,6 +227,10 @@
             <point key="canvasLocation" x="137.68115942028987" y="138.61607142857142"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="book" catalog="system" width="64" height="50"/>
+        <image name="magnifyingglass" catalog="system" width="64" height="56"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="0g9-I2-5hX"/>
     </inferredMetricsTieBreakers>

@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		29AA17DFD03BEDE8E5ACC042 /* Pods_EJBookShelf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8434BB5A0DA4D6005DE0009 /* Pods_EJBookShelf.framework */; };
 		7237388323628EFE0001AFF8 /* TestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7237388223628EFE0001AFF8 /* TestModel.m */; };
+		7237388823629F370001AFF8 /* ResultInfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7237388623629F370001AFF8 /* ResultInfoTableViewCell.m */; };
+		7237388923629F370001AFF8 /* ResultInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7237388723629F370001AFF8 /* ResultInfoTableViewCell.xib */; };
 		B65685B723603A5500B9157C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B65685B623603A5500B9157C /* AppDelegate.m */; };
 		B65685C023603A5500B9157C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B65685BE23603A5500B9157C /* Main.storyboard */; };
 		B65685C323603A5500B9157C /* EJBookShelf.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B65685C123603A5500B9157C /* EJBookShelf.xcdatamodeld */; };
@@ -41,6 +43,9 @@
 		275B21C17AE9357636AA58CE /* Pods-EJBookShelfTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EJBookShelfTests.debug.xcconfig"; path = "Target Support Files/Pods-EJBookShelfTests/Pods-EJBookShelfTests.debug.xcconfig"; sourceTree = "<group>"; };
 		7237388123628EFE0001AFF8 /* TestModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestModel.h; sourceTree = "<group>"; };
 		7237388223628EFE0001AFF8 /* TestModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestModel.m; sourceTree = "<group>"; };
+		7237388523629F370001AFF8 /* ResultInfoTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ResultInfoTableViewCell.h; sourceTree = "<group>"; };
+		7237388623629F370001AFF8 /* ResultInfoTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ResultInfoTableViewCell.m; sourceTree = "<group>"; };
+		7237388723629F370001AFF8 /* ResultInfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResultInfoTableViewCell.xib; sourceTree = "<group>"; };
 		73828A66E46DDC9B25E7FF02 /* Pods-EJBookShelfTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EJBookShelfTests.release.xcconfig"; path = "Target Support Files/Pods-EJBookShelfTests/Pods-EJBookShelfTests.release.xcconfig"; sourceTree = "<group>"; };
 		764BF9F240459D94CBBB7454 /* Pods-EJBookShelf.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EJBookShelf.release.xcconfig"; path = "Target Support Files/Pods-EJBookShelf/Pods-EJBookShelf.release.xcconfig"; sourceTree = "<group>"; };
 		B65685B223603A5500B9157C /* EJBookShelf.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EJBookShelf.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -174,6 +179,9 @@
 				B65685E92360400100B9157C /* BookTableViewCell.h */,
 				B65685EA2360400100B9157C /* BookTableViewCell.m */,
 				B65685EB2360400100B9157C /* BookTableViewCell.xib */,
+				7237388523629F370001AFF8 /* ResultInfoTableViewCell.h */,
+				7237388623629F370001AFF8 /* ResultInfoTableViewCell.m */,
+				7237388723629F370001AFF8 /* ResultInfoTableViewCell.xib */,
 			);
 			path = "TableView Cell";
 			sourceTree = "<group>";
@@ -282,6 +290,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B65685ED2360400100B9157C /* BookTableViewCell.xib in Resources */,
+				7237388923629F370001AFF8 /* ResultInfoTableViewCell.xib in Resources */,
 				B65685C823603A5600B9157C /* LaunchScreen.storyboard in Resources */,
 				B65685C523603A5600B9157C /* Assets.xcassets in Resources */,
 				B65685C023603A5500B9157C /* Main.storyboard in Resources */,
@@ -370,6 +379,7 @@
 				B65685C323603A5500B9157C /* EJBookShelf.xcdatamodeld in Sources */,
 				B65685E123603B3600B9157C /* NewViewController.m in Sources */,
 				B65685E423603B4C00B9157C /* SearchViewController.m in Sources */,
+				7237388823629F370001AFF8 /* ResultInfoTableViewCell.m in Sources */,
 				B65685B723603A5500B9157C /* AppDelegate.m in Sources */,
 				B65685EC2360400100B9157C /* BookTableViewCell.m in Sources */,
 				7237388323628EFE0001AFF8 /* TestModel.m in Sources */,

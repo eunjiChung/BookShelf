@@ -10,7 +10,6 @@
 #import "BookTableViewCell.h"
 #import "DetailViewController.h"
 #import "EJHTTPClient.h"
-#import <AFNetworking.h>
 #import "UIImageView+AFNetworking.h"
 
 
