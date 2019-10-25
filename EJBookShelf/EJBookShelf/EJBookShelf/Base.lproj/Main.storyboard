@@ -101,9 +101,184 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gqv-aK-dbC">
                                 <rect key="frame" x="0.0" y="95" width="414" height="801"/>
                                 <subviews>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Cgq-fD-tvb">
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Cgq-fD-tvb">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="801"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="196" id="GUt-qf-AXp">
+                                                <rect key="frame" x="0.0" y="28" width="414" height="196"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="GUt-qf-AXp" id="YTr-IX-yiS">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="196"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rxP-cN-ZAT">
+                                                            <rect key="frame" x="20" y="11" width="374" height="174"/>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="bottomMargin" secondItem="rxP-cN-ZAT" secondAttribute="bottom" id="SNm-GZ-i18"/>
+                                                        <constraint firstItem="rxP-cN-ZAT" firstAttribute="top" secondItem="YTr-IX-yiS" secondAttribute="topMargin" id="Zmi-ng-kMA"/>
+                                                        <constraint firstAttribute="trailingMargin" secondItem="rxP-cN-ZAT" secondAttribute="trailing" id="k6o-rd-cXB"/>
+                                                        <constraint firstItem="rxP-cN-ZAT" firstAttribute="leading" secondItem="YTr-IX-yiS" secondAttribute="leadingMargin" id="yHy-xe-3T9"/>
+                                                    </constraints>
+                                                </tableViewCellContentView>
+                                            </tableViewCell>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="139" id="UtC-Bf-Jl0">
+                                                <rect key="frame" x="0.0" y="224" width="414" height="139"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="UtC-Bf-Jl0" id="pLs-26-ESn">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="139"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yga-sT-Bxk">
+                                                            <rect key="frame" x="40" y="11" width="334" height="117"/>
+                                                            <string key="text">AI Blueprints gives you a working framework and the techniques to build your own successful AI business applications. You'll learn across six business scenarios how AI can solve critical challenges with state-of-the-art AI software libraries and a well thought out workflow. Along the way you'll disc...</string>
+                                                            <fontDescription key="fontDescription" name="HiraMinProN-W3" family="Hiragino Mincho ProN" pointSize="15"/>
+                                                            <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="trailingMargin" secondItem="Yga-sT-Bxk" secondAttribute="trailing" constant="20" id="042-p2-Bt7"/>
+                                                        <constraint firstItem="Yga-sT-Bxk" firstAttribute="top" secondItem="pLs-26-ESn" secondAttribute="topMargin" id="RtK-84-ofX"/>
+                                                        <constraint firstItem="Yga-sT-Bxk" firstAttribute="leading" secondItem="pLs-26-ESn" secondAttribute="leadingMargin" constant="20" id="mxs-7v-pYi"/>
+                                                        <constraint firstItem="Yga-sT-Bxk" firstAttribute="bottom" secondItem="pLs-26-ESn" secondAttribute="bottomMargin" id="yXu-Y3-BgJ"/>
+                                                    </constraints>
+                                                </tableViewCellContentView>
+                                            </tableViewCell>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="239" id="r4d-5C-uha">
+                                                <rect key="frame" x="0.0" y="363" width="414" height="239"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="r4d-5C-uha" id="slP-3i-cB6">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="239"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AI Blueprints" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2d5-KY-YCi">
+                                                            <rect key="frame" x="30" y="11" width="354" height="22"/>
+                                                            <fontDescription key="fontDescription" name="HiraMinProN-W6" family="Hiragino Mincho ProN" pointSize="22"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dr. Joshua Eckroth" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JXN-Yy-7GY">
+                                                            <rect key="frame" x="30" y="125" width="106" height="23.5"/>
+                                                            <fontDescription key="fontDescription" name="KhmerSangamMN" family="Khmer Sangam MN" pointSize="13"/>
+                                                            <color key="textColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="| Packt Publishing" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ou-rh-ASA">
+                                                            <rect key="frame" x="146" y="125" width="98" height="23.5"/>
+                                                            <fontDescription key="fontDescription" name="KhmerSangamMN" family="Khmer Sangam MN" pointSize="13"/>
+                                                            <color key="textColor" systemColor="systemBrownColor" red="0.63529411759999999" green="0.51764705879999995" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How to build and deploy AI business projects" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kIU-mN-0Ve">
+                                                            <rect key="frame" x="30" y="43" width="354" height="34"/>
+                                                            <fontDescription key="fontDescription" name="HiraMinProN-W3" family="Hiragino Mincho ProN" pointSize="17"/>
+                                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rating 3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JNa-4V-tSh">
+                                                            <rect key="frame" x="119.5" y="89.5" width="66.5" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="250 pages" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cVA-Wz-VxC">
+                                                            <rect key="frame" x="30" y="193.5" width="71.5" height="15"/>
+                                                            <fontDescription key="fontDescription" name="HiraMinProN-W3" family="Hiragino Mincho ProN" pointSize="15"/>
+                                                            <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Year 2018" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xbY-uc-5xM">
+                                                            <rect key="frame" x="130" y="193.5" width="72.5" height="15"/>
+                                                            <fontDescription key="fontDescription" name="HiraMinProN-W3" family="Hiragino Mincho ProN" pointSize="15"/>
+                                                            <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$31.99" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bua-hY-KSF">
+                                                            <rect key="frame" x="30" y="85" width="79.5" height="30"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                            <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ISBN10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dST-F5-Hdf">
+                                                            <rect key="frame" x="30" y="158.5" width="36" height="10"/>
+                                                            <fontDescription key="fontDescription" name="HiraMinProN-W3" family="Hiragino Mincho ProN" pointSize="10"/>
+                                                            <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1788992873 " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sjI-is-oZe">
+                                                            <rect key="frame" x="74" y="158.5" width="63" height="10"/>
+                                                            <fontDescription key="fontDescription" name="HiraMinProN-W3" family="Hiragino Mincho ProN" pointSize="10"/>
+                                                            <color key="textColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ISBN13" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cPD-Zw-iFl">
+                                                            <rect key="frame" x="30" y="173.5" width="36" height="10"/>
+                                                            <fontDescription key="fontDescription" name="HiraMinProN-W3" family="Hiragino Mincho ProN" pointSize="10"/>
+                                                            <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9781788992879 " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CmP-4j-cQV">
+                                                            <rect key="frame" x="74" y="173.5" width="80" height="10"/>
+                                                            <fontDescription key="fontDescription" name="HiraMinProN-W3" family="Hiragino Mincho ProN" pointSize="10"/>
+                                                            <color key="textColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <view alpha="0.75" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XUZ-77-cqV">
+                                                            <rect key="frame" x="20" y="227.5" width="374" height="0.5"/>
+                                                            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="0.5" id="CA9-xA-9sq"/>
+                                                            </constraints>
+                                                        </view>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="English" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yFn-bW-zM9">
+                                                            <rect key="frame" x="222.5" y="193.5" width="52" height="15"/>
+                                                            <fontDescription key="fontDescription" name="HiraMinProN-W3" family="Hiragino Mincho ProN" pointSize="15"/>
+                                                            <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="JNa-4V-tSh" firstAttribute="leading" secondItem="bua-hY-KSF" secondAttribute="trailing" constant="10" id="1ai-mA-zrC"/>
+                                                        <constraint firstItem="yFn-bW-zM9" firstAttribute="leading" secondItem="xbY-uc-5xM" secondAttribute="trailing" constant="20" id="26O-cG-Jgu"/>
+                                                        <constraint firstAttribute="bottomMargin" secondItem="XUZ-77-cqV" secondAttribute="bottom" id="5Qq-op-ga0"/>
+                                                        <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="4ou-rh-ASA" secondAttribute="trailing" priority="250" id="6i4-YI-Dg4"/>
+                                                        <constraint firstItem="2d5-KY-YCi" firstAttribute="top" secondItem="slP-3i-cB6" secondAttribute="topMargin" id="Adl-Fh-f9v"/>
+                                                        <constraint firstItem="xbY-uc-5xM" firstAttribute="leading" secondItem="cVA-Wz-VxC" secondAttribute="trailing" constant="28.5" id="Ame-P0-CF6"/>
+                                                        <constraint firstItem="XUZ-77-cqV" firstAttribute="top" secondItem="cVA-Wz-VxC" secondAttribute="bottom" priority="250" constant="10" id="AuU-qA-nvd"/>
+                                                        <constraint firstItem="4ou-rh-ASA" firstAttribute="centerY" secondItem="JXN-Yy-7GY" secondAttribute="centerY" id="CD2-Ny-rdP"/>
+                                                        <constraint firstAttribute="trailingMargin" secondItem="XUZ-77-cqV" secondAttribute="trailing" id="G32-ly-LbE"/>
+                                                        <constraint firstItem="JXN-Yy-7GY" firstAttribute="top" secondItem="bua-hY-KSF" secondAttribute="bottom" constant="10" id="Gec-T3-lho"/>
+                                                        <constraint firstItem="kIU-mN-0Ve" firstAttribute="top" secondItem="2d5-KY-YCi" secondAttribute="bottom" constant="10" id="Iio-wd-u2e"/>
+                                                        <constraint firstItem="bua-hY-KSF" firstAttribute="leading" secondItem="2d5-KY-YCi" secondAttribute="leading" id="QRB-JN-Hcy"/>
+                                                        <constraint firstItem="CmP-4j-cQV" firstAttribute="leading" secondItem="sjI-is-oZe" secondAttribute="leading" id="S2G-2A-7rS"/>
+                                                        <constraint firstItem="cVA-Wz-VxC" firstAttribute="top" secondItem="cPD-Zw-iFl" secondAttribute="bottom" constant="10" id="SYm-F9-Y1A"/>
+                                                        <constraint firstItem="sjI-is-oZe" firstAttribute="leading" secondItem="dST-F5-Hdf" secondAttribute="trailing" constant="8" id="YLY-Nd-ydY"/>
+                                                        <constraint firstItem="JNa-4V-tSh" firstAttribute="centerY" secondItem="bua-hY-KSF" secondAttribute="centerY" id="YvX-yB-X9M"/>
+                                                        <constraint firstItem="dST-F5-Hdf" firstAttribute="top" secondItem="JXN-Yy-7GY" secondAttribute="bottom" constant="10" id="a8H-X3-Jbb"/>
+                                                        <constraint firstItem="kIU-mN-0Ve" firstAttribute="leading" secondItem="2d5-KY-YCi" secondAttribute="leading" id="bAq-Xt-pno"/>
+                                                        <constraint firstItem="yFn-bW-zM9" firstAttribute="centerY" secondItem="cVA-Wz-VxC" secondAttribute="centerY" id="dpm-fT-fMk"/>
+                                                        <constraint firstItem="dST-F5-Hdf" firstAttribute="leading" secondItem="2d5-KY-YCi" secondAttribute="leading" id="dx5-ND-whd"/>
+                                                        <constraint firstItem="JXN-Yy-7GY" firstAttribute="leading" secondItem="2d5-KY-YCi" secondAttribute="leading" id="eu5-1Q-jAF"/>
+                                                        <constraint firstItem="sjI-is-oZe" firstAttribute="centerY" secondItem="dST-F5-Hdf" secondAttribute="centerY" id="f9W-On-T8R"/>
+                                                        <constraint firstItem="2d5-KY-YCi" firstAttribute="leading" secondItem="slP-3i-cB6" secondAttribute="leadingMargin" constant="10" id="iNt-db-NoJ"/>
+                                                        <constraint firstAttribute="trailingMargin" secondItem="JNa-4V-tSh" secondAttribute="trailing" priority="250" id="kpl-Id-5Cl"/>
+                                                        <constraint firstItem="XUZ-77-cqV" firstAttribute="leading" secondItem="slP-3i-cB6" secondAttribute="leadingMargin" id="n53-j7-wHB"/>
+                                                        <constraint firstItem="xbY-uc-5xM" firstAttribute="centerY" secondItem="cVA-Wz-VxC" secondAttribute="centerY" id="oz2-hD-h7w"/>
+                                                        <constraint firstItem="CmP-4j-cQV" firstAttribute="centerY" secondItem="cPD-Zw-iFl" secondAttribute="centerY" id="r5E-ER-EH6"/>
+                                                        <constraint firstItem="cPD-Zw-iFl" firstAttribute="leading" secondItem="2d5-KY-YCi" secondAttribute="leading" id="rgn-sY-9W5"/>
+                                                        <constraint firstItem="4ou-rh-ASA" firstAttribute="leading" secondItem="JXN-Yy-7GY" secondAttribute="trailing" constant="10" id="sMa-ye-iif"/>
+                                                        <constraint firstItem="cPD-Zw-iFl" firstAttribute="top" secondItem="dST-F5-Hdf" secondAttribute="bottom" constant="5" id="tWW-7X-SUn"/>
+                                                        <constraint firstAttribute="trailingMargin" secondItem="2d5-KY-YCi" secondAttribute="trailing" constant="10" id="uWd-fr-dCQ"/>
+                                                        <constraint firstItem="kIU-mN-0Ve" firstAttribute="trailing" secondItem="2d5-KY-YCi" secondAttribute="trailing" id="w0d-eu-9SR"/>
+                                                        <constraint firstItem="cVA-Wz-VxC" firstAttribute="leading" secondItem="2d5-KY-YCi" secondAttribute="leading" id="xuJ-sa-vOc"/>
+                                                        <constraint firstItem="bua-hY-KSF" firstAttribute="top" secondItem="kIU-mN-0Ve" secondAttribute="bottom" constant="8" id="ybA-aZ-N6I"/>
+                                                    </constraints>
+                                                </tableViewCellContentView>
+                                            </tableViewCell>
+                                        </prototypes>
                                         <connections>
                                             <outlet property="dataSource" destination="gzs-nd-BEh" id="68e-ot-4Md"/>
                                             <outlet property="delegate" destination="gzs-nd-BEh" id="mXx-HZ-Fch"/>

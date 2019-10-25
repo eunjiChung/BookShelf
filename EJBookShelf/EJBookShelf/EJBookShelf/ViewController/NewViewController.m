@@ -34,7 +34,7 @@
     [self callNewBookList];
 }
 
-// MARK: - Request Method
+#pragma mark - Request Method
 - (void)callNewBookList {
     
     [[EJHTTPClient sharedInstance] requestNewBookStore:^(id  _Nonnull result) {
@@ -48,7 +48,7 @@
     }];
 }
 
-// MARK: - TableView Data Source
+#pragma mark - TableView Data Source
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.total;
 }
@@ -69,24 +69,24 @@
     return cell;
 }
 
-// MARK: - TableView Delegate
+#pragma mark - TableView Delegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 193.0;
 }
 
-//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-//    if ([segue.identifier  isEqual:@"new_detail_segue"]) {
-//        DetailViewController *destination = segue.destinationViewController;
-//        NSIndexPath *selectedIndexPath = sender;
-//
-//        // TODO: - Send book info of specific cell
-//        NSLog(@"Send book info %@ in %zd", destination, selectedIndexPath.row);
-//    }
-//}
-//
-//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-//    [self performSegueWithIdentifier:@"new_detail_segue" sender:indexPath];
-//}
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier  isEqual:@"new_detail_segue"]) {
+        DetailViewController *destination = segue.destinationViewController;
+        NSIndexPath *selectedIndexPath = sender;
+//        NSLog(@"Send book info %@ from %zd in %@", destination, selectedIndexPath.row, self.list[selectedIndexPath.row]);
+        NSDictionary *book = self.list[selectedIndexPath.row];
+        destination.isbn13 = book[@"isbn13"];
+    }
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [self performSegueWithIdentifier:@"new_detail_segue" sender:indexPath];
+}
 
 
 @end
