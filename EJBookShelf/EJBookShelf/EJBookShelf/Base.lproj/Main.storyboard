@@ -378,6 +378,9 @@
                                     <string>Title</string>
                                     <string>Title</string>
                                 </scopeButtonTitles>
+                                <connections>
+                                    <outlet property="delegate" destination="2gO-Cf-Til" id="OHY-6c-yKB"/>
+                                </connections>
                             </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Z0x-el-5BA">
                                 <rect key="frame" x="0.0" y="151" width="414" height="662"/>
@@ -405,6 +408,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Search" image="magnifyingglass" catalog="system" id="yNU-Zn-XXQ"/>
                     <connections>
+                        <outlet property="searchBar" destination="IxS-Kp-IZz" id="fT9-9E-0mx"/>
                         <outlet property="tableView" destination="Z0x-el-5BA" id="2Ec-fq-m1x"/>
                         <segue destination="gzs-nd-BEh" kind="presentation" identifier="search_detail_segue" modalPresentationStyle="fullScreen" id="fbO-TW-hfo"/>
                     </connections>

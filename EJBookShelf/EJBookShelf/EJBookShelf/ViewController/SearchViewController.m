@@ -14,9 +14,10 @@
 #import "DetailViewController.h"
 #import <SVPullToRefresh.h>
 
-@interface SearchViewController () <UITableViewDataSource, UITableViewDelegate>
+@interface SearchViewController () <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 
 @property (strong, nonatomic) NSMutableArray *list; // 가져오는 책 결과 리스트
 @property (assign, nonatomic) NSInteger total;      // 총 페이지 수
@@ -38,8 +39,6 @@
     
     self.total = 1;
     self.page = 1;
-    self.keyword = @"db";
-    [self callBySearchKeyword:self.keyword];
     
     [self addPullToRefreshControl];
     [self addInfiniteScrollingControl];
@@ -70,8 +69,28 @@
     }];
 }
 
-// MARK: - TableView Data Source
+#pragma mark - SearchBar Delegate
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+    [self.view endEditing:YES];
+    
+    if (![searchBar.text isEqualToString:@""]) {
+        self.keyword = searchBar.text;
+        NSLog(@"Keyword : %@", searchBar.text);
+        [self callBySearchKeyword:self.keyword];
+    } else {
+        [self showDefaultAlert:@"알림" message:@"검색어를 넣어주세요"];
+    }
+}
+
+
+
+
+#pragma mark - TableView Data Source
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    if (self.total == 0) {
+        return 1;
+    }
     return (self.list == nil) ? 1 : self.list.count;
 }
 

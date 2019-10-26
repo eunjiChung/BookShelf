@@ -33,6 +33,13 @@
     [self presentViewController:alert animated:YES completion:nil];
 }
 
+- (void)showDefaultAlert:(NSString *)title message:(NSString *)message {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
+    [alert addAction:okAction];
+    [self presentViewController:alert animated:true completion:nil];
+}
+
 #pragma mark - Public Method
 - (NSMutableAttributedString *)generateHyperlink:(NSString *)url {
     

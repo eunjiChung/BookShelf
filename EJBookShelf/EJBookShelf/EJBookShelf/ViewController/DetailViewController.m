@@ -64,6 +64,8 @@
             cell.bookTitleLabel.text = self.bookInfo[@"title"];
             cell.bookSubtitleLabel.text = self.bookInfo[@"subtitle"];
             cell.bookPriceLabel.text = self.bookInfo[@"price"];
+            // TODO: - Rating이 0일 경우는 어떻게...?
+            cell.bookRatingLabel.text = [NSString stringWithFormat:@"Rating %@", self.bookInfo[@"rating"]];
             cell.bookAuthorLabel.text = self.bookInfo[@"authors"];
             cell.bookPublisherLabel.text = self.bookInfo[@"publisher"];
             cell.bookYear.text = [NSString stringWithFormat:@"%@Year", self.bookInfo[@"year"]];
