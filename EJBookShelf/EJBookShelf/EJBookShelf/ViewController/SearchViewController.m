@@ -109,11 +109,7 @@
             
             cell.bookPriceLabel.text = bookInfo[@"price"];
             cell.bookIsbnLabel.text = bookInfo[@"isbn13"];
-            
-            NSString *url = bookInfo[@"url"];
-            NSMutableAttributedString * attributedString = [[NSMutableAttributedString alloc] initWithString:url];
-            [attributedString addAttribute:NSLinkAttributeName value:url range:NSMakeRange(0, url.length)];
-            cell.bookUrlTextView.attributedText = attributedString;
+            cell.bookUrlTextView.attributedText = [self generateHyperlink:bookInfo[@"url"]];
             
             return cell;
         }

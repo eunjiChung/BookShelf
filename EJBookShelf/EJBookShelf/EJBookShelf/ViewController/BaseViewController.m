@@ -33,5 +33,13 @@
     [self presentViewController:alert animated:YES completion:nil];
 }
 
+#pragma mark - Public Method
+- (NSMutableAttributedString *)generateHyperlink:(NSString *)url {
+    
+    NSMutableAttributedString * attributedString = [[NSMutableAttributedString alloc] initWithString:url];
+    [attributedString addAttribute:NSLinkAttributeName value:url range:NSMakeRange(0, url.length)];
+    return attributedString;
+}
+
 
 @end

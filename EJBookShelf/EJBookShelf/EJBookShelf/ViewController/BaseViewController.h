@@ -13,6 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface BaseViewController : UIViewController
 
 - (void)showErrorAlert:(NSError *)error;
+- (NSMutableAttributedString *)generateHyperlink:(NSString *)url;
 
 @end
 

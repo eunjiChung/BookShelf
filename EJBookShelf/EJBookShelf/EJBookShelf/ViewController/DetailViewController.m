@@ -60,23 +60,20 @@
     } else if (indexPath.row == 1) {
         DetailBookInfoTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DetailBookInfoTableViewCell" forIndexPath:indexPath];
         
-        cell.bookTitleLabel.text = self.bookInfo[@"title"];
-        cell.bookSubtitleLabel.text = self.bookInfo[@"subtitle"];
-        cell.bookPriceLabel.text = self.bookInfo[@"price"];
-        cell.bookAuthorLabel.text = self.bookInfo[@"authors"];
-        cell.bookPublisherLabel.text = self.bookInfo[@"publisher"];
-        cell.bookYear.text = self.bookInfo[@"year"];
-        cell.bookPages.text = self.bookInfo[@"pages"];
-        cell.bookIsbn10Label.text = self.bookInfo[@"isbn10"];
-        cell.bookIsbn13Label.text = self.bookInfo[@"isbn13"];
-        cell.bookLanguage.text = self.bookInfo[@"language"];
-        
-        NSString *url = self.bookInfo[@"url"];
-        NSMutableAttributedString * attributedString = [[NSMutableAttributedString alloc] initWithString:url];
-        [attributedString addAttribute:NSLinkAttributeName value:url range:NSMakeRange(0, url.length)];
-        cell.bookUrl.attributedText = attributedString;
-        
-        
+        if (self.bookInfo != nil) {
+            cell.bookTitleLabel.text = self.bookInfo[@"title"];
+            cell.bookSubtitleLabel.text = self.bookInfo[@"subtitle"];
+            cell.bookPriceLabel.text = self.bookInfo[@"price"];
+            cell.bookAuthorLabel.text = self.bookInfo[@"authors"];
+            cell.bookPublisherLabel.text = self.bookInfo[@"publisher"];
+            cell.bookYear.text = [NSString stringWithFormat:@"%@Year", self.bookInfo[@"year"]];
+            cell.bookPages.text = [NSString stringWithFormat:@"%@pages", self.bookInfo[@"pages"]];
+            cell.bookIsbn10Label.text = self.bookInfo[@"isbn10"];
+            cell.bookIsbn13Label.text = self.bookInfo[@"isbn13"];
+            cell.bookLanguage.text = self.bookInfo[@"language"];
+            cell.bookUrl.attributedText = [self generateHyperlink:self.bookInfo[@"url"]];
+        }
+
         return cell;
     } else if (indexPath.row == 2) {
         DetailBookDescTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DetailBookDescTableViewCell" forIndexPath:indexPath];
@@ -90,6 +87,8 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row == 0) {
         return 300.0;
+    } else if (indexPath.row == 1) {
+        return 280.0;
     }
     return UITableViewAutomaticDimension;
 }
