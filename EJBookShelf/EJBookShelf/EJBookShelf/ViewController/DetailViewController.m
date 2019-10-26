@@ -28,8 +28,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self.tableview registerNib:[UINib nibWithNibName:@"AddTableViewCell" bundle:nil] forCellReuseIdentifier:@"AddTableViewCell"];
-    [self.tableview registerNib:[UINib nibWithNibName:@"MemoTableViewCell" bundle:nil] forCellReuseIdentifier:@"MemoTableViewCell"];
+    [self registerTableViewCellNibs];
     [self callBookInfo];
 }
 
@@ -130,6 +129,12 @@
     }
     
     return 70.0;
+}
+
+#pragma mark - Private Method
+- (void)registerTableViewCellNibs {
+    [self.tableview registerNib:[UINib nibWithNibName:@"AddTableViewCell" bundle:nil] forCellReuseIdentifier:@"AddTableViewCell"];
+    [self.tableview registerNib:[UINib nibWithNibName:@"MemoTableViewCell" bundle:nil] forCellReuseIdentifier:@"MemoTableViewCell"];
 }
 
 @end
