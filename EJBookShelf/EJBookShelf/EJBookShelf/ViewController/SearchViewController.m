@@ -73,16 +73,17 @@
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
     [self.view endEditing:YES];
+    [searchBar resignFirstResponder];
     
     if (![searchBar.text isEqualToString:@""]) {
-        self.keyword = searchBar.text;
-        NSLog(@"Keyword : %@", searchBar.text);
+        NSString *notEncoded = searchBar.text;
+        NSString *encoded = [notEncoded stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+        self.keyword = encoded;
         [self callBySearchKeyword:self.keyword];
     } else {
         [self showDefaultAlert:@"알림" message:@"검색어를 넣어주세요"];
     }
 }
-
 
 
 
