@@ -15,10 +15,6 @@
 		728DE9262362DB8A0019EF78 /* DetailBookInfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 728DE91F2362DB8A0019EF78 /* DetailBookInfoTableViewCell.m */; };
 		728DE9272362DB8A0019EF78 /* DetailBookDescTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 728DE9222362DB8A0019EF78 /* DetailBookDescTableViewCell.m */; };
 		728DE92A2362EDA60019EF78 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 728DE9292362EDA60019EF78 /* BaseViewController.m */; };
-		72B7B3B72364517F001E54BE /* AddTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 72B7B3B52364517F001E54BE /* AddTableViewCell.m */; };
-		72B7B3B82364517F001E54BE /* AddTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72B7B3B62364517F001E54BE /* AddTableViewCell.xib */; };
-		72B7B3BC2364545C001E54BE /* MemoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 72B7B3BA2364545C001E54BE /* MemoTableViewCell.m */; };
-		72B7B3BD2364545C001E54BE /* MemoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72B7B3BB2364545C001E54BE /* MemoTableViewCell.xib */; };
 		B65685B723603A5500B9157C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B65685B623603A5500B9157C /* AppDelegate.m */; };
 		B65685C023603A5500B9157C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B65685BE23603A5500B9157C /* Main.storyboard */; };
 		B65685C323603A5500B9157C /* EJBookShelf.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B65685C123603A5500B9157C /* EJBookShelf.xcdatamodeld */; };
@@ -62,12 +58,6 @@
 		728DE9242362DB8A0019EF78 /* DetailBookInfoTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = DetailBookInfoTableViewCell.h; path = "/Users/CHUNGEUNJI/Documents/EJ/BookShelf/EJBookShelf/EJBookShelf/EJBookShelf/TableView Cell/DetailBookInfoTableViewCell.h"; sourceTree = "<absolute>"; };
 		728DE9282362EDA60019EF78 /* BaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		728DE9292362EDA60019EF78 /* BaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
-		72B7B3B42364517F001E54BE /* AddTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddTableViewCell.h; sourceTree = "<group>"; };
-		72B7B3B52364517F001E54BE /* AddTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddTableViewCell.m; sourceTree = "<group>"; };
-		72B7B3B62364517F001E54BE /* AddTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddTableViewCell.xib; sourceTree = "<group>"; };
-		72B7B3B92364545C001E54BE /* MemoTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MemoTableViewCell.h; sourceTree = "<group>"; };
-		72B7B3BA2364545C001E54BE /* MemoTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MemoTableViewCell.m; sourceTree = "<group>"; };
-		72B7B3BB2364545C001E54BE /* MemoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MemoTableViewCell.xib; sourceTree = "<group>"; };
 		73828A66E46DDC9B25E7FF02 /* Pods-EJBookShelfTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EJBookShelfTests.release.xcconfig"; path = "Target Support Files/Pods-EJBookShelfTests/Pods-EJBookShelfTests.release.xcconfig"; sourceTree = "<group>"; };
 		764BF9F240459D94CBBB7454 /* Pods-EJBookShelf.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EJBookShelf.release.xcconfig"; path = "Target Support Files/Pods-EJBookShelf/Pods-EJBookShelf.release.xcconfig"; sourceTree = "<group>"; };
 		B65685B223603A5500B9157C /* EJBookShelf.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EJBookShelf.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -149,12 +139,6 @@
 				728DE9212362DB8A0019EF78 /* DetailBookImageTableViewCell.m */,
 				728DE9242362DB8A0019EF78 /* DetailBookInfoTableViewCell.h */,
 				728DE91F2362DB8A0019EF78 /* DetailBookInfoTableViewCell.m */,
-				72B7B3B42364517F001E54BE /* AddTableViewCell.h */,
-				72B7B3B52364517F001E54BE /* AddTableViewCell.m */,
-				72B7B3B62364517F001E54BE /* AddTableViewCell.xib */,
-				72B7B3B92364545C001E54BE /* MemoTableViewCell.h */,
-				72B7B3BA2364545C001E54BE /* MemoTableViewCell.m */,
-				72B7B3BB2364545C001E54BE /* MemoTableViewCell.xib */,
 			);
 			path = DetailCell;
 			sourceTree = "<group>";
@@ -343,9 +327,7 @@
 			files = (
 				B65685ED2360400100B9157C /* BookTableViewCell.xib in Resources */,
 				7237388923629F370001AFF8 /* ResultInfoTableViewCell.xib in Resources */,
-				72B7B3BD2364545C001E54BE /* MemoTableViewCell.xib in Resources */,
 				B65685C823603A5600B9157C /* LaunchScreen.storyboard in Resources */,
-				72B7B3B82364517F001E54BE /* AddTableViewCell.xib in Resources */,
 				B65685C523603A5600B9157C /* Assets.xcassets in Resources */,
 				B65685C023603A5500B9157C /* Main.storyboard in Resources */,
 			);
@@ -435,7 +417,6 @@
 				B65685E123603B3600B9157C /* NewViewController.m in Sources */,
 				B65685E423603B4C00B9157C /* SearchViewController.m in Sources */,
 				728DE92A2362EDA60019EF78 /* BaseViewController.m in Sources */,
-				72B7B3B72364517F001E54BE /* AddTableViewCell.m in Sources */,
 				728DE9262362DB8A0019EF78 /* DetailBookInfoTableViewCell.m in Sources */,
 				7237388823629F370001AFF8 /* ResultInfoTableViewCell.m in Sources */,
 				B65685B723603A5500B9157C /* AppDelegate.m in Sources */,
@@ -444,7 +425,6 @@
 				7237388323628EFE0001AFF8 /* TestModel.m in Sources */,
 				B65685E723603B5D00B9157C /* DetailViewController.m in Sources */,
 				B65685F12360478100B9157C /* EJHTTPClient.m in Sources */,
-				72B7B3BC2364545C001E54BE /* MemoTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
