@@ -1,0 +1,700 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		29AA17DFD03BEDE8E5ACC042 /* Pods_EJBookShelf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8434BB5A0DA4D6005DE0009 /* Pods_EJBookShelf.framework */; };
+		7237388323628EFE0001AFF8 /* BookModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7237388223628EFE0001AFF8 /* BookModel.m */; };
+		7237388823629F370001AFF8 /* ResultInfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7237388623629F370001AFF8 /* ResultInfoTableViewCell.m */; };
+		7237388923629F370001AFF8 /* ResultInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7237388723629F370001AFF8 /* ResultInfoTableViewCell.xib */; };
+		728DE92A2362EDA60019EF78 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 728DE9292362EDA60019EF78 /* BaseViewController.m */; };
+		7297409F2366EDDA00825300 /* DetailBookDescTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 729740992366EDDA00825300 /* DetailBookDescTableViewCell.m */; };
+		729740A02366EDDA00825300 /* DetailBookImageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7297409D2366EDDA00825300 /* DetailBookImageTableViewCell.m */; };
+		729740A12366EDDA00825300 /* DetailBookInfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7297409E2366EDDA00825300 /* DetailBookInfoTableViewCell.m */; };
+		729848DA2366BBA800BEFD9B /* NewBooks.m in Sources */ = {isa = PBXBuildFile; fileRef = 729848D92366BBA800BEFD9B /* NewBooks.m */; };
+		729848DD2366C4E000BEFD9B /* SearchBooks.m in Sources */ = {isa = PBXBuildFile; fileRef = 729848DC2366C4E000BEFD9B /* SearchBooks.m */; };
+		B65685B723603A5500B9157C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B65685B623603A5500B9157C /* AppDelegate.m */; };
+		B65685C023603A5500B9157C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B65685BE23603A5500B9157C /* Main.storyboard */; };
+		B65685C523603A5600B9157C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B65685C423603A5600B9157C /* Assets.xcassets */; };
+		B65685C823603A5600B9157C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B65685C623603A5600B9157C /* LaunchScreen.storyboard */; };
+		B65685CB23603A5600B9157C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B65685CA23603A5600B9157C /* main.m */; };
+		B65685D523603A5600B9157C /* EJBookShelfTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B65685D423603A5600B9157C /* EJBookShelfTests.m */; };
+		B65685E123603B3600B9157C /* NewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B65685E023603B3600B9157C /* NewViewController.m */; };
+		B65685E423603B4C00B9157C /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B65685E323603B4C00B9157C /* SearchViewController.m */; };
+		B65685E723603B5D00B9157C /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B65685E623603B5D00B9157C /* DetailViewController.m */; };
+		B65685EC2360400100B9157C /* BookTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B65685EA2360400100B9157C /* BookTableViewCell.m */; };
+		B65685ED2360400100B9157C /* BookTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B65685EB2360400100B9157C /* BookTableViewCell.xib */; };
+		B65685F12360478100B9157C /* EJHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = B65685F02360478100B9157C /* EJHTTPClient.m */; };
+		BAE9AF5A2C6DDF1CB878E341 /* Pods_EJBookShelfTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10E45F799C5C16036B8BEDC9 /* Pods_EJBookShelfTests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B65685D123603A5600B9157C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B65685AA23603A5500B9157C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B65685B123603A5500B9157C;
+			remoteInfo = EJBookShelf;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0CFB2F2D75B8C4984AF4B01D /* Pods-EJBookShelf.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EJBookShelf.debug.xcconfig"; path = "Target Support Files/Pods-EJBookShelf/Pods-EJBookShelf.debug.xcconfig"; sourceTree = "<group>"; };
+		10E45F799C5C16036B8BEDC9 /* Pods_EJBookShelfTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EJBookShelfTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		275B21C17AE9357636AA58CE /* Pods-EJBookShelfTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EJBookShelfTests.debug.xcconfig"; path = "Target Support Files/Pods-EJBookShelfTests/Pods-EJBookShelfTests.debug.xcconfig"; sourceTree = "<group>"; };
+		7237388123628EFE0001AFF8 /* BookModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BookModel.h; sourceTree = "<group>"; };
+		7237388223628EFE0001AFF8 /* BookModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BookModel.m; sourceTree = "<group>"; };
+		7237388523629F370001AFF8 /* ResultInfoTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ResultInfoTableViewCell.h; sourceTree = "<group>"; };
+		7237388623629F370001AFF8 /* ResultInfoTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ResultInfoTableViewCell.m; sourceTree = "<group>"; };
+		7237388723629F370001AFF8 /* ResultInfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResultInfoTableViewCell.xib; sourceTree = "<group>"; };
+		728DE9282362EDA60019EF78 /* BaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		728DE9292362EDA60019EF78 /* BaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		729740992366EDDA00825300 /* DetailBookDescTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailBookDescTableViewCell.m; sourceTree = "<group>"; };
+		7297409A2366EDDA00825300 /* DetailBookInfoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailBookInfoTableViewCell.h; sourceTree = "<group>"; };
+		7297409B2366EDDA00825300 /* DetailBookImageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailBookImageTableViewCell.h; sourceTree = "<group>"; };
+		7297409C2366EDDA00825300 /* DetailBookDescTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailBookDescTableViewCell.h; sourceTree = "<group>"; };
+		7297409D2366EDDA00825300 /* DetailBookImageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailBookImageTableViewCell.m; sourceTree = "<group>"; };
+		7297409E2366EDDA00825300 /* DetailBookInfoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailBookInfoTableViewCell.m; sourceTree = "<group>"; };
+		729848D82366BBA800BEFD9B /* NewBooks.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewBooks.h; sourceTree = "<group>"; };
+		729848D92366BBA800BEFD9B /* NewBooks.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewBooks.m; sourceTree = "<group>"; };
+		729848DB2366C4E000BEFD9B /* SearchBooks.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchBooks.h; sourceTree = "<group>"; };
+		729848DC2366C4E000BEFD9B /* SearchBooks.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchBooks.m; sourceTree = "<group>"; };
+		73828A66E46DDC9B25E7FF02 /* Pods-EJBookShelfTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EJBookShelfTests.release.xcconfig"; path = "Target Support Files/Pods-EJBookShelfTests/Pods-EJBookShelfTests.release.xcconfig"; sourceTree = "<group>"; };
+		764BF9F240459D94CBBB7454 /* Pods-EJBookShelf.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EJBookShelf.release.xcconfig"; path = "Target Support Files/Pods-EJBookShelf/Pods-EJBookShelf.release.xcconfig"; sourceTree = "<group>"; };
+		B65685B223603A5500B9157C /* EJBookShelf.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EJBookShelf.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B65685B523603A5500B9157C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		B65685B623603A5500B9157C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		B65685BF23603A5500B9157C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B65685C423603A5600B9157C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B65685C723603A5600B9157C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B65685C923603A5600B9157C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B65685CA23603A5600B9157C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		B65685D023603A5600B9157C /* EJBookShelfTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EJBookShelfTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B65685D423603A5600B9157C /* EJBookShelfTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EJBookShelfTests.m; sourceTree = "<group>"; };
+		B65685D623603A5600B9157C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B65685DF23603B3600B9157C /* NewViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewViewController.h; sourceTree = "<group>"; };
+		B65685E023603B3600B9157C /* NewViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewViewController.m; sourceTree = "<group>"; };
+		B65685E223603B4C00B9157C /* SearchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
+		B65685E323603B4C00B9157C /* SearchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
+		B65685E523603B5D00B9157C /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		B65685E623603B5D00B9157C /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		B65685E92360400100B9157C /* BookTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BookTableViewCell.h; sourceTree = "<group>"; };
+		B65685EA2360400100B9157C /* BookTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BookTableViewCell.m; sourceTree = "<group>"; };
+		B65685EB2360400100B9157C /* BookTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookTableViewCell.xib; sourceTree = "<group>"; };
+		B65685EF2360478100B9157C /* EJHTTPClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EJHTTPClient.h; sourceTree = "<group>"; };
+		B65685F02360478100B9157C /* EJHTTPClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EJHTTPClient.m; sourceTree = "<group>"; };
+		B8434BB5A0DA4D6005DE0009 /* Pods_EJBookShelf.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EJBookShelf.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B65685AF23603A5500B9157C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				29AA17DFD03BEDE8E5ACC042 /* Pods_EJBookShelf.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B65685CD23603A5600B9157C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BAE9AF5A2C6DDF1CB878E341 /* Pods_EJBookShelfTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5F2F7D9BD179CD854D7D92FA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B8434BB5A0DA4D6005DE0009 /* Pods_EJBookShelf.framework */,
+				10E45F799C5C16036B8BEDC9 /* Pods_EJBookShelfTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		72373884236295AC0001AFF8 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				728DE9282362EDA60019EF78 /* BaseViewController.h */,
+				728DE9292362EDA60019EF78 /* BaseViewController.m */,
+				B65685DF23603B3600B9157C /* NewViewController.h */,
+				B65685E023603B3600B9157C /* NewViewController.m */,
+				B65685E223603B4C00B9157C /* SearchViewController.h */,
+				B65685E323603B4C00B9157C /* SearchViewController.m */,
+				B65685E523603B5D00B9157C /* DetailViewController.h */,
+				B65685E623603B5D00B9157C /* DetailViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		728DE92C2362F0C70019EF78 /* SearchCell */ = {
+			isa = PBXGroup;
+			children = (
+				7237388523629F370001AFF8 /* ResultInfoTableViewCell.h */,
+				7237388623629F370001AFF8 /* ResultInfoTableViewCell.m */,
+				7237388723629F370001AFF8 /* ResultInfoTableViewCell.xib */,
+			);
+			path = SearchCell;
+			sourceTree = "<group>";
+		};
+		729740982366ECA900825300 /* DetailCell */ = {
+			isa = PBXGroup;
+			children = (
+				7297409C2366EDDA00825300 /* DetailBookDescTableViewCell.h */,
+				729740992366EDDA00825300 /* DetailBookDescTableViewCell.m */,
+				7297409B2366EDDA00825300 /* DetailBookImageTableViewCell.h */,
+				7297409D2366EDDA00825300 /* DetailBookImageTableViewCell.m */,
+				7297409A2366EDDA00825300 /* DetailBookInfoTableViewCell.h */,
+				7297409E2366EDDA00825300 /* DetailBookInfoTableViewCell.m */,
+			);
+			path = DetailCell;
+			sourceTree = "<group>";
+		};
+		B65685A923603A5500B9157C = {
+			isa = PBXGroup;
+			children = (
+				B65685B423603A5500B9157C /* EJBookShelf */,
+				B65685D323603A5600B9157C /* EJBookShelfTests */,
+				B65685B323603A5500B9157C /* Products */,
+				CCA308C7BBEEEF0E76F46863 /* Pods */,
+				5F2F7D9BD179CD854D7D92FA /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		B65685B323603A5500B9157C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B65685B223603A5500B9157C /* EJBookShelf.app */,
+				B65685D023603A5600B9157C /* EJBookShelfTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B65685B423603A5500B9157C /* EJBookShelf */ = {
+			isa = PBXGroup;
+			children = (
+				B65685B523603A5500B9157C /* AppDelegate.h */,
+				B65685B623603A5500B9157C /* AppDelegate.m */,
+				B65685EE2360400600B9157C /* View */,
+				72373884236295AC0001AFF8 /* Controller */,
+				B65685F223604D3B00B9157C /* Model */,
+				B65685C923603A5600B9157C /* Info.plist */,
+				B65685E823603B7A00B9157C /* Supporting Files */,
+			);
+			path = EJBookShelf;
+			sourceTree = "<group>";
+		};
+		B65685D323603A5600B9157C /* EJBookShelfTests */ = {
+			isa = PBXGroup;
+			children = (
+				B65685D423603A5600B9157C /* EJBookShelfTests.m */,
+				B65685D623603A5600B9157C /* Info.plist */,
+			);
+			path = EJBookShelfTests;
+			sourceTree = "<group>";
+		};
+		B65685E823603B7A00B9157C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B65685C423603A5600B9157C /* Assets.xcassets */,
+				B65685C623603A5600B9157C /* LaunchScreen.storyboard */,
+				B65685CA23603A5600B9157C /* main.m */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B65685EE2360400600B9157C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B65685BE23603A5500B9157C /* Main.storyboard */,
+				B65685E92360400100B9157C /* BookTableViewCell.h */,
+				B65685EA2360400100B9157C /* BookTableViewCell.m */,
+				B65685EB2360400100B9157C /* BookTableViewCell.xib */,
+				729740982366ECA900825300 /* DetailCell */,
+				728DE92C2362F0C70019EF78 /* SearchCell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B65685F223604D3B00B9157C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B65685EF2360478100B9157C /* EJHTTPClient.h */,
+				B65685F02360478100B9157C /* EJHTTPClient.m */,
+				7237388123628EFE0001AFF8 /* BookModel.h */,
+				7237388223628EFE0001AFF8 /* BookModel.m */,
+				729848D82366BBA800BEFD9B /* NewBooks.h */,
+				729848D92366BBA800BEFD9B /* NewBooks.m */,
+				729848DB2366C4E000BEFD9B /* SearchBooks.h */,
+				729848DC2366C4E000BEFD9B /* SearchBooks.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CCA308C7BBEEEF0E76F46863 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0CFB2F2D75B8C4984AF4B01D /* Pods-EJBookShelf.debug.xcconfig */,
+				764BF9F240459D94CBBB7454 /* Pods-EJBookShelf.release.xcconfig */,
+				275B21C17AE9357636AA58CE /* Pods-EJBookShelfTests.debug.xcconfig */,
+				73828A66E46DDC9B25E7FF02 /* Pods-EJBookShelfTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B65685B123603A5500B9157C /* EJBookShelf */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B65685D923603A5600B9157C /* Build configuration list for PBXNativeTarget "EJBookShelf" */;
+			buildPhases = (
+				1DEFCEC820805C773BC580E1 /* [CP] Check Pods Manifest.lock */,
+				B65685AE23603A5500B9157C /* Sources */,
+				B65685AF23603A5500B9157C /* Frameworks */,
+				B65685B023603A5500B9157C /* Resources */,
+				9C2393105B0AB73A386E136C /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EJBookShelf;
+			productName = EJBookShelf;
+			productReference = B65685B223603A5500B9157C /* EJBookShelf.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B65685CF23603A5600B9157C /* EJBookShelfTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B65685DC23603A5600B9157C /* Build configuration list for PBXNativeTarget "EJBookShelfTests" */;
+			buildPhases = (
+				FBBAAFF4EC913D069F94E41A /* [CP] Check Pods Manifest.lock */,
+				B65685CC23603A5600B9157C /* Sources */,
+				B65685CD23603A5600B9157C /* Frameworks */,
+				B65685CE23603A5600B9157C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B65685D223603A5600B9157C /* PBXTargetDependency */,
+			);
+			name = EJBookShelfTests;
+			productName = EJBookShelfTests;
+			productReference = B65685D023603A5600B9157C /* EJBookShelfTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B65685AA23603A5500B9157C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1100;
+				ORGANIZATIONNAME = eunji;
+				TargetAttributes = {
+					B65685B123603A5500B9157C = {
+						CreatedOnToolsVersion = 11.0;
+					};
+					B65685CF23603A5600B9157C = {
+						CreatedOnToolsVersion = 11.0;
+						TestTargetID = B65685B123603A5500B9157C;
+					};
+				};
+			};
+			buildConfigurationList = B65685AD23603A5500B9157C /* Build configuration list for PBXProject "EJBookShelf" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B65685A923603A5500B9157C;
+			productRefGroup = B65685B323603A5500B9157C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B65685B123603A5500B9157C /* EJBookShelf */,
+				B65685CF23603A5600B9157C /* EJBookShelfTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B65685B023603A5500B9157C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B65685ED2360400100B9157C /* BookTableViewCell.xib in Resources */,
+				7237388923629F370001AFF8 /* ResultInfoTableViewCell.xib in Resources */,
+				B65685C823603A5600B9157C /* LaunchScreen.storyboard in Resources */,
+				B65685C523603A5600B9157C /* Assets.xcassets in Resources */,
+				B65685C023603A5500B9157C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B65685CE23603A5600B9157C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1DEFCEC820805C773BC580E1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-EJBookShelf-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9C2393105B0AB73A386E136C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EJBookShelf/Pods-EJBookShelf-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EJBookShelf/Pods-EJBookShelf-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EJBookShelf/Pods-EJBookShelf-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FBBAAFF4EC913D069F94E41A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-EJBookShelfTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B65685AE23603A5500B9157C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B65685CB23603A5600B9157C /* main.m in Sources */,
+				B65685E123603B3600B9157C /* NewViewController.m in Sources */,
+				B65685E423603B4C00B9157C /* SearchViewController.m in Sources */,
+				728DE92A2362EDA60019EF78 /* BaseViewController.m in Sources */,
+				7237388823629F370001AFF8 /* ResultInfoTableViewCell.m in Sources */,
+				B65685B723603A5500B9157C /* AppDelegate.m in Sources */,
+				B65685EC2360400100B9157C /* BookTableViewCell.m in Sources */,
+				7237388323628EFE0001AFF8 /* BookModel.m in Sources */,
+				729848DD2366C4E000BEFD9B /* SearchBooks.m in Sources */,
+				7297409F2366EDDA00825300 /* DetailBookDescTableViewCell.m in Sources */,
+				B65685E723603B5D00B9157C /* DetailViewController.m in Sources */,
+				729740A02366EDDA00825300 /* DetailBookImageTableViewCell.m in Sources */,
+				729848DA2366BBA800BEFD9B /* NewBooks.m in Sources */,
+				B65685F12360478100B9157C /* EJHTTPClient.m in Sources */,
+				729740A12366EDDA00825300 /* DetailBookInfoTableViewCell.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B65685CC23603A5600B9157C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B65685D523603A5600B9157C /* EJBookShelfTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B65685D223603A5600B9157C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B65685B123603A5500B9157C /* EJBookShelf */;
+			targetProxy = B65685D123603A5600B9157C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B65685BE23603A5500B9157C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B65685BF23603A5500B9157C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B65685C623603A5600B9157C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B65685C723603A5600B9157C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B65685D723603A5600B9157C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		B65685D823603A5600B9157C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B65685DA23603A5600B9157C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0CFB2F2D75B8C4984AF4B01D /* Pods-EJBookShelf.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 88356WAKJ6;
+				INFOPLIST_FILE = EJBookShelf/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.eunji.chung.EJBookShelf;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B65685DB23603A5600B9157C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 764BF9F240459D94CBBB7454 /* Pods-EJBookShelf.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 88356WAKJ6;
+				INFOPLIST_FILE = EJBookShelf/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.eunji.chung.EJBookShelf;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		B65685DD23603A5600B9157C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 275B21C17AE9357636AA58CE /* Pods-EJBookShelfTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 88356WAKJ6;
+				INFOPLIST_FILE = EJBookShelfTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.eunji.chung.EJBookShelfTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EJBookShelf.app/EJBookShelf";
+			};
+			name = Debug;
+		};
+		B65685DE23603A5600B9157C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 73828A66E46DDC9B25E7FF02 /* Pods-EJBookShelfTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 88356WAKJ6;
+				INFOPLIST_FILE = EJBookShelfTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.eunji.chung.EJBookShelfTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EJBookShelf.app/EJBookShelf";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B65685AD23603A5500B9157C /* Build configuration list for PBXProject "EJBookShelf" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B65685D723603A5600B9157C /* Debug */,
+				B65685D823603A5600B9157C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B65685D923603A5600B9157C /* Build configuration list for PBXNativeTarget "EJBookShelf" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B65685DA23603A5600B9157C /* Debug */,
+				B65685DB23603A5600B9157C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B65685DC23603A5600B9157C /* Build configuration list for PBXNativeTarget "EJBookShelfTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B65685DD23603A5600B9157C /* Debug */,
+				B65685DE23603A5600B9157C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B65685AA23603A5500B9157C /* Project object */;
+}

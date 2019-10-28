@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="BookTableViewCell" rowHeight="193" id="KGk-i7-Jjw" customClass="BookTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="390" height="193"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="390" height="193"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wih-qA-OoA">
+                        <rect key="frame" x="20" y="11" width="136" height="171"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="136" id="5y3-gL-6s7"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Practical MongoDB" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sdl-o9-dh2">
+                        <rect key="frame" x="166" y="21" width="204" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="w9k-MN-b5r"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="HiraMinProN-W6" family="Hiragino Mincho ProN" pointSize="19"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A complete guide to dealing with Big Data using MongoDB" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rBJ-03-5A4">
+                        <rect key="frame" x="166" y="58" width="204" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="yEY-9T-Z0R"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="HiraMinProN-W3" family="Hiragino Mincho ProN" pointSize="14"/>
+                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$29.99" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AO2-x1-FiO">
+                        <rect key="frame" x="166" y="95" width="82" height="23"/>
+                        <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="23"/>
+                        <color key="textColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ISBN13 9781484206485" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HUz-ko-gXA">
+                        <rect key="frame" x="166" y="127" width="204" height="13"/>
+                        <fontDescription key="fontDescription" name="HiraMinProN-W3" family="Hiragino Mincho ProN" pointSize="13"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" editable="NO" text="https://itbook.store/books/9781430215752" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Ga-5H-6en">
+                        <rect key="frame" x="166" y="148" width="204" height="27"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="9"/>
+                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                        <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                    </textView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Sdl-o9-dh2" firstAttribute="leading" secondItem="wih-qA-OoA" secondAttribute="trailing" constant="10" id="BTb-7C-5cM"/>
+                    <constraint firstItem="AO2-x1-FiO" firstAttribute="leading" secondItem="Sdl-o9-dh2" secondAttribute="leading" id="Bm1-Dh-Kh7"/>
+                    <constraint firstItem="AO2-x1-FiO" firstAttribute="leading" secondItem="wih-qA-OoA" secondAttribute="trailing" constant="10" id="CQm-JV-fx5"/>
+                    <constraint firstItem="6Ga-5H-6en" firstAttribute="top" secondItem="HUz-ko-gXA" secondAttribute="bottom" constant="8" id="Evc-9Y-f1n"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="6Ga-5H-6en" secondAttribute="bottom" constant="7" id="Ig4-fW-DBK"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="HUz-ko-gXA" secondAttribute="trailing" id="Ndp-yU-3ka"/>
+                    <constraint firstItem="wih-qA-OoA" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="No8-GW-TPP"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="6Ga-5H-6en" secondAttribute="trailing" id="PVG-k0-LWj"/>
+                    <constraint firstItem="rBJ-03-5A4" firstAttribute="leading" secondItem="Sdl-o9-dh2" secondAttribute="leading" id="Rxp-wL-A7h"/>
+                    <constraint firstItem="wih-qA-OoA" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="UPi-DH-uOK"/>
+                    <constraint firstItem="rBJ-03-5A4" firstAttribute="top" secondItem="Sdl-o9-dh2" secondAttribute="bottom" constant="7" id="gND-1n-qsT"/>
+                    <constraint firstItem="HUz-ko-gXA" firstAttribute="top" relation="greaterThanOrEqual" secondItem="AO2-x1-FiO" secondAttribute="bottom" constant="7" id="hIZ-OY-Msd"/>
+                    <constraint firstItem="6Ga-5H-6en" firstAttribute="leading" secondItem="wih-qA-OoA" secondAttribute="trailing" constant="10" id="iP7-RM-nnB"/>
+                    <constraint firstItem="AO2-x1-FiO" firstAttribute="top" secondItem="rBJ-03-5A4" secondAttribute="bottom" constant="7" id="kgg-Bc-vfn"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="wih-qA-OoA" secondAttribute="bottom" id="pCM-0Z-Ptq"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="Sdl-o9-dh2" secondAttribute="trailing" id="ppn-GF-ey0"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="rBJ-03-5A4" secondAttribute="trailing" id="uJf-Xq-gLi"/>
+                    <constraint firstItem="Sdl-o9-dh2" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="10" id="vHy-29-m08"/>
+                    <constraint firstItem="HUz-ko-gXA" firstAttribute="leading" secondItem="Sdl-o9-dh2" secondAttribute="leading" id="vRx-po-9Kx"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
+            <connections>
+                <outlet property="bookImageView" destination="wih-qA-OoA" id="GUa-ya-cNT"/>
+                <outlet property="bookIsbnLabel" destination="HUz-ko-gXA" id="HcM-SB-3HH"/>
+                <outlet property="bookPriceLabel" destination="AO2-x1-FiO" id="fW8-hO-V1g"/>
+                <outlet property="bookSubTitleLabel" destination="rBJ-03-5A4" id="fro-Nf-6Ul"/>
+                <outlet property="bookTitleLabel" destination="Sdl-o9-dh2" id="2CA-MX-Yxf"/>
+                <outlet property="bookUrlTextView" destination="6Ga-5H-6en" id="AF6-gM-2Ad"/>
+            </connections>
+            <point key="canvasLocation" x="188.40579710144928" y="203.23660714285714"/>
+        </tableViewCell>
+    </objects>
+</document>
