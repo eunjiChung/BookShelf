@@ -80,8 +80,8 @@
             cell.bookRatingLabel.text = [NSString stringWithFormat:@"Rating %@", self.model.rating];
             cell.bookAuthorLabel.text = self.model.authors;
             cell.bookPublisherLabel.text = self.model.publisher;
-            cell.bookYear.text = [NSString stringWithFormat:@"%@Year", self.model.year];
-            cell.bookPages.text = [NSString stringWithFormat:@"%@pages", self.model.pages];
+            cell.bookYear.text = [NSString stringWithFormat:@"%@ Year", self.model.year];
+            cell.bookPages.text = [NSString stringWithFormat:@"%@ pages", self.model.pages];
             cell.bookIsbn10Label.text = self.model.isbn10;
             cell.bookIsbn13Label.text = self.model.isbn13;
             cell.bookLanguage.text = self.model.language;
@@ -105,11 +105,6 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.row == 0) {
-        return 300.0;
-    } else if (indexPath.row == 1) {
-        return 280.0;
-    }
     return UITableViewAutomaticDimension;
 }
 

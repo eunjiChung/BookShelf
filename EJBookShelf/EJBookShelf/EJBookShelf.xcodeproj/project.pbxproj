@@ -11,10 +11,10 @@
 		7237388323628EFE0001AFF8 /* BookModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7237388223628EFE0001AFF8 /* BookModel.m */; };
 		7237388823629F370001AFF8 /* ResultInfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7237388623629F370001AFF8 /* ResultInfoTableViewCell.m */; };
 		7237388923629F370001AFF8 /* ResultInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7237388723629F370001AFF8 /* ResultInfoTableViewCell.xib */; };
-		728DE9252362DB8A0019EF78 /* DetailBookImageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 728DE9212362DB8A0019EF78 /* DetailBookImageTableViewCell.m */; };
-		728DE9262362DB8A0019EF78 /* DetailBookInfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 728DE91F2362DB8A0019EF78 /* DetailBookInfoTableViewCell.m */; };
-		728DE9272362DB8A0019EF78 /* DetailBookDescTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 728DE9222362DB8A0019EF78 /* DetailBookDescTableViewCell.m */; };
 		728DE92A2362EDA60019EF78 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 728DE9292362EDA60019EF78 /* BaseViewController.m */; };
+		7297409F2366EDDA00825300 /* DetailBookDescTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 729740992366EDDA00825300 /* DetailBookDescTableViewCell.m */; };
+		729740A02366EDDA00825300 /* DetailBookImageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7297409D2366EDDA00825300 /* DetailBookImageTableViewCell.m */; };
+		729740A12366EDDA00825300 /* DetailBookInfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7297409E2366EDDA00825300 /* DetailBookInfoTableViewCell.m */; };
 		729848DA2366BBA800BEFD9B /* NewBooks.m in Sources */ = {isa = PBXBuildFile; fileRef = 729848D92366BBA800BEFD9B /* NewBooks.m */; };
 		729848DD2366C4E000BEFD9B /* SearchBooks.m in Sources */ = {isa = PBXBuildFile; fileRef = 729848DC2366C4E000BEFD9B /* SearchBooks.m */; };
 		B65685B723603A5500B9157C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B65685B623603A5500B9157C /* AppDelegate.m */; };
@@ -51,14 +51,14 @@
 		7237388523629F370001AFF8 /* ResultInfoTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ResultInfoTableViewCell.h; sourceTree = "<group>"; };
 		7237388623629F370001AFF8 /* ResultInfoTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ResultInfoTableViewCell.m; sourceTree = "<group>"; };
 		7237388723629F370001AFF8 /* ResultInfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResultInfoTableViewCell.xib; sourceTree = "<group>"; };
-		728DE91F2362DB8A0019EF78 /* DetailBookInfoTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = DetailBookInfoTableViewCell.m; path = "/Users/CHUNGEUNJI/Documents/EJ/BookShelf/EJBookShelf/EJBookShelf/EJBookShelf/TableView Cell/DetailBookInfoTableViewCell.m"; sourceTree = "<absolute>"; };
-		728DE9202362DB8A0019EF78 /* DetailBookDescTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = DetailBookDescTableViewCell.h; path = "/Users/CHUNGEUNJI/Documents/EJ/BookShelf/EJBookShelf/EJBookShelf/EJBookShelf/TableView Cell/DetailBookDescTableViewCell.h"; sourceTree = "<absolute>"; };
-		728DE9212362DB8A0019EF78 /* DetailBookImageTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = DetailBookImageTableViewCell.m; path = "/Users/CHUNGEUNJI/Documents/EJ/BookShelf/EJBookShelf/EJBookShelf/EJBookShelf/TableView Cell/DetailBookImageTableViewCell.m"; sourceTree = "<absolute>"; };
-		728DE9222362DB8A0019EF78 /* DetailBookDescTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = DetailBookDescTableViewCell.m; path = "/Users/CHUNGEUNJI/Documents/EJ/BookShelf/EJBookShelf/EJBookShelf/EJBookShelf/TableView Cell/DetailBookDescTableViewCell.m"; sourceTree = "<absolute>"; };
-		728DE9232362DB8A0019EF78 /* DetailBookImageTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = DetailBookImageTableViewCell.h; path = "/Users/CHUNGEUNJI/Documents/EJ/BookShelf/EJBookShelf/EJBookShelf/EJBookShelf/TableView Cell/DetailBookImageTableViewCell.h"; sourceTree = "<absolute>"; };
-		728DE9242362DB8A0019EF78 /* DetailBookInfoTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = DetailBookInfoTableViewCell.h; path = "/Users/CHUNGEUNJI/Documents/EJ/BookShelf/EJBookShelf/EJBookShelf/EJBookShelf/TableView Cell/DetailBookInfoTableViewCell.h"; sourceTree = "<absolute>"; };
 		728DE9282362EDA60019EF78 /* BaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		728DE9292362EDA60019EF78 /* BaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		729740992366EDDA00825300 /* DetailBookDescTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailBookDescTableViewCell.m; sourceTree = "<group>"; };
+		7297409A2366EDDA00825300 /* DetailBookInfoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailBookInfoTableViewCell.h; sourceTree = "<group>"; };
+		7297409B2366EDDA00825300 /* DetailBookImageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailBookImageTableViewCell.h; sourceTree = "<group>"; };
+		7297409C2366EDDA00825300 /* DetailBookDescTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailBookDescTableViewCell.h; sourceTree = "<group>"; };
+		7297409D2366EDDA00825300 /* DetailBookImageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailBookImageTableViewCell.m; sourceTree = "<group>"; };
+		7297409E2366EDDA00825300 /* DetailBookInfoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailBookInfoTableViewCell.m; sourceTree = "<group>"; };
 		729848D82366BBA800BEFD9B /* NewBooks.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewBooks.h; sourceTree = "<group>"; };
 		729848D92366BBA800BEFD9B /* NewBooks.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewBooks.m; sourceTree = "<group>"; };
 		729848DB2366C4E000BEFD9B /* SearchBooks.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchBooks.h; sourceTree = "<group>"; };
@@ -119,7 +119,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		72373884236295AC0001AFF8 /* ViewController */ = {
+		72373884236295AC0001AFF8 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
 				728DE9282362EDA60019EF78 /* BaseViewController.h */,
@@ -131,20 +131,7 @@
 				B65685E523603B5D00B9157C /* DetailViewController.h */,
 				B65685E623603B5D00B9157C /* DetailViewController.m */,
 			);
-			path = ViewController;
-			sourceTree = "<group>";
-		};
-		728DE92B2362F0AF0019EF78 /* DetailCell */ = {
-			isa = PBXGroup;
-			children = (
-				728DE9202362DB8A0019EF78 /* DetailBookDescTableViewCell.h */,
-				728DE9222362DB8A0019EF78 /* DetailBookDescTableViewCell.m */,
-				728DE9232362DB8A0019EF78 /* DetailBookImageTableViewCell.h */,
-				728DE9212362DB8A0019EF78 /* DetailBookImageTableViewCell.m */,
-				728DE9242362DB8A0019EF78 /* DetailBookInfoTableViewCell.h */,
-				728DE91F2362DB8A0019EF78 /* DetailBookInfoTableViewCell.m */,
-			);
-			path = DetailCell;
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		728DE92C2362F0C70019EF78 /* SearchCell */ = {
@@ -155,6 +142,19 @@
 				7237388723629F370001AFF8 /* ResultInfoTableViewCell.xib */,
 			);
 			path = SearchCell;
+			sourceTree = "<group>";
+		};
+		729740982366ECA900825300 /* DetailCell */ = {
+			isa = PBXGroup;
+			children = (
+				7297409C2366EDDA00825300 /* DetailBookDescTableViewCell.h */,
+				729740992366EDDA00825300 /* DetailBookDescTableViewCell.m */,
+				7297409B2366EDDA00825300 /* DetailBookImageTableViewCell.h */,
+				7297409D2366EDDA00825300 /* DetailBookImageTableViewCell.m */,
+				7297409A2366EDDA00825300 /* DetailBookInfoTableViewCell.h */,
+				7297409E2366EDDA00825300 /* DetailBookInfoTableViewCell.m */,
+			);
+			path = DetailCell;
 			sourceTree = "<group>";
 		};
 		B65685A923603A5500B9157C = {
@@ -182,11 +182,8 @@
 			children = (
 				B65685B523603A5500B9157C /* AppDelegate.h */,
 				B65685B623603A5500B9157C /* AppDelegate.m */,
-				B65685EF2360478100B9157C /* EJHTTPClient.h */,
-				B65685F02360478100B9157C /* EJHTTPClient.m */,
-				B65685BE23603A5500B9157C /* Main.storyboard */,
-				72373884236295AC0001AFF8 /* ViewController */,
-				B65685EE2360400600B9157C /* TableView Cell */,
+				B65685EE2360400600B9157C /* View */,
+				72373884236295AC0001AFF8 /* Controller */,
 				B65685F223604D3B00B9157C /* Model */,
 				B65685C923603A5600B9157C /* Info.plist */,
 				B65685E823603B7A00B9157C /* Supporting Files */,
@@ -213,21 +210,24 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		B65685EE2360400600B9157C /* TableView Cell */ = {
+		B65685EE2360400600B9157C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B65685BE23603A5500B9157C /* Main.storyboard */,
 				B65685E92360400100B9157C /* BookTableViewCell.h */,
 				B65685EA2360400100B9157C /* BookTableViewCell.m */,
 				B65685EB2360400100B9157C /* BookTableViewCell.xib */,
+				729740982366ECA900825300 /* DetailCell */,
 				728DE92C2362F0C70019EF78 /* SearchCell */,
-				728DE92B2362F0AF0019EF78 /* DetailCell */,
 			);
-			path = "TableView Cell";
+			path = View;
 			sourceTree = "<group>";
 		};
 		B65685F223604D3B00B9157C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				B65685EF2360478100B9157C /* EJHTTPClient.h */,
+				B65685F02360478100B9157C /* EJHTTPClient.m */,
 				7237388123628EFE0001AFF8 /* BookModel.h */,
 				7237388223628EFE0001AFF8 /* BookModel.m */,
 				729848D82366BBA800BEFD9B /* NewBooks.h */,
@@ -419,20 +419,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				B65685CB23603A5600B9157C /* main.m in Sources */,
-				728DE9252362DB8A0019EF78 /* DetailBookImageTableViewCell.m in Sources */,
 				B65685E123603B3600B9157C /* NewViewController.m in Sources */,
 				B65685E423603B4C00B9157C /* SearchViewController.m in Sources */,
 				728DE92A2362EDA60019EF78 /* BaseViewController.m in Sources */,
-				728DE9262362DB8A0019EF78 /* DetailBookInfoTableViewCell.m in Sources */,
 				7237388823629F370001AFF8 /* ResultInfoTableViewCell.m in Sources */,
 				B65685B723603A5500B9157C /* AppDelegate.m in Sources */,
 				B65685EC2360400100B9157C /* BookTableViewCell.m in Sources */,
-				728DE9272362DB8A0019EF78 /* DetailBookDescTableViewCell.m in Sources */,
 				7237388323628EFE0001AFF8 /* BookModel.m in Sources */,
 				729848DD2366C4E000BEFD9B /* SearchBooks.m in Sources */,
+				7297409F2366EDDA00825300 /* DetailBookDescTableViewCell.m in Sources */,
 				B65685E723603B5D00B9157C /* DetailViewController.m in Sources */,
+				729740A02366EDDA00825300 /* DetailBookImageTableViewCell.m in Sources */,
 				729848DA2366BBA800BEFD9B /* NewBooks.m in Sources */,
 				B65685F12360478100B9157C /* EJHTTPClient.m in Sources */,
+				729740A12366EDDA00825300 /* DetailBookInfoTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

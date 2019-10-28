@@ -69,10 +69,6 @@
     return cell;
 }
 
-#pragma mark - TableView Delegate
-//- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-//    return 193.0;
-//}
 
 #pragma mark - Segue Action
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {

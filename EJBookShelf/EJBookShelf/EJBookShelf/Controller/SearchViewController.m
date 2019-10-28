@@ -44,6 +44,11 @@
     [self addInfiniteScrollingControl];
 }
 
+#pragma mark - Touch Action
+// 상단 바를 터치하면 키보드가 내려간다 
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [[self view] endEditing:YES];
+}
 
 #pragma mark - Call API
 
@@ -63,7 +68,6 @@
             
             [self.tableView.pullToRefreshView stopAnimating];
             [self.tableView.infiniteScrollingView stopAnimating];
-            
             [self.activityIndicator stopAnimating];
             [self.activityIndicator setHidden:YES];
         } failure:^(NSError * _Nonnull error) {
@@ -71,7 +75,11 @@
         }];
     } else {
         [self showDefaultAlert:@"알림!" message:@"검색어를 넣어주세요!"];
+        
         [self.tableView.pullToRefreshView stopAnimating];
+        [self.tableView.infiniteScrollingView stopAnimating];
+        [self.activityIndicator stopAnimating];
+        [self.activityIndicator setHidden:YES];
     }
 }
 
@@ -87,6 +95,8 @@
         NSString *notEncoded = searchBar.text;
         NSString *encoded = [notEncoded stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
         self.keyword = encoded;
+        
+        self.searchedBooks = nil;
         [self callBySearchKeyword:self.keyword page:1];
     } else {
         [self showDefaultAlert:@"알림" message:@"검색어를 넣어주세요"];
@@ -98,7 +108,7 @@
 #pragma mark - TableView Data Source
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if (self.searchedBooks.total == 0) { return 1; }
-    return (self.searchedBooks.books == nil) ? 1 : self.searchedBooks.books.count;
+    return (self.searchedBooks == nil) ? 1 : self.searchedBooks.books.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -167,16 +177,16 @@
     NSInteger startRowIndex = self.searchedBooks.books.count;
     NSMutableArray *indexPathList = [NSMutableArray new];
     
-    for(int i = 0; i < 10; i++)
-    {
-        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:startRowIndex+i inSection:0];
-        [indexPathList addObject:indexPath];
-    }
-    
     NSMutableArray<BookModel *> *originalBooks = self.searchedBooks.books.mutableCopy;
     SearchBooks *newSearchResults = [[SearchBooks alloc] initWithDictionary:newResults];
     [originalBooks addObjectsFromArray:newSearchResults.books];
     self.searchedBooks.books = originalBooks;
+    
+    for(int i = 0; i < newSearchResults.books.count; i++)
+    {
+        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:startRowIndex+i inSection:0];
+        [indexPathList addObject:indexPath];
+    }
     
     dispatch_async(dispatch_get_main_queue(), ^{
         [self.tableView insertRowsAtIndexPaths:indexPathList withRowAnimation:UITableViewRowAnimationAutomatic];
