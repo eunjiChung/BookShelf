@@ -8,70 +8,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--New View Controller-->
-        <scene sceneID="tne-QT-ifu">
-            <objects>
-                <viewController id="BYZ-38-t0r" customClass="NewViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Ld-OJ-Dhr">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="95"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Book List" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="foz-13-Bwq">
-                                        <rect key="frame" x="124" y="52" width="166.5" height="28"/>
-                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="24"/>
-                                        <color key="textColor" red="0.98039215690000003" green="0.91372549020000005" blue="0.87058823529999996" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstItem="foz-13-Bwq" firstAttribute="centerX" secondItem="1Ld-OJ-Dhr" secondAttribute="centerX" id="EVe-DO-lnX"/>
-                                    <constraint firstAttribute="bottom" secondItem="foz-13-Bwq" secondAttribute="bottom" constant="15" id="T0S-CC-4fU"/>
-                                    <constraint firstAttribute="height" constant="95" id="Zao-X0-scn"/>
-                                </constraints>
-                            </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="LJZ-eZ-9JG">
-                                <rect key="frame" x="0.0" y="95" width="414" height="718"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="hnz-b2-nkv"/>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="PyR-Ct-wai"/>
-                                </connections>
-                            </tableView>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="lXA-jp-dyA">
-                                <rect key="frame" x="0.0" y="95" width="414" height="718"/>
-                            </activityIndicatorView>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="LJZ-eZ-9JG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="AKL-ag-ZOe"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="LJZ-eZ-9JG" secondAttribute="bottom" id="CeK-V1-1fS"/>
-                            <constraint firstItem="1Ld-OJ-Dhr" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="J50-ag-ScG"/>
-                            <constraint firstItem="1Ld-OJ-Dhr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="N5l-Go-IwL"/>
-                            <constraint firstItem="lXA-jp-dyA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Nbn-rT-fI7"/>
-                            <constraint firstItem="LJZ-eZ-9JG" firstAttribute="top" secondItem="1Ld-OJ-Dhr" secondAttribute="bottom" id="VjV-Zm-tOe"/>
-                            <constraint firstItem="1Ld-OJ-Dhr" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="WJn-T0-M5v"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="LJZ-eZ-9JG" secondAttribute="trailing" id="YRP-rB-p3M"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="lXA-jp-dyA" secondAttribute="bottom" id="YgU-Po-mOl"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="lXA-jp-dyA" secondAttribute="trailing" id="iHM-hx-Pz3"/>
-                            <constraint firstItem="lXA-jp-dyA" firstAttribute="top" secondItem="1Ld-OJ-Dhr" secondAttribute="bottom" id="wiX-hu-1Ox"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="" systemItem="recents" id="NGl-oV-DJa"/>
-                    <connections>
-                        <outlet property="activityIndicator" destination="lXA-jp-dyA" id="Osu-QC-7aj"/>
-                        <outlet property="tableView" destination="LJZ-eZ-9JG" id="hOR-ii-p7Y"/>
-                        <segue destination="gzs-nd-BEh" kind="presentation" identifier="new_detail_segue" modalPresentationStyle="fullScreen" id="0g9-I2-5hX"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1395.6521739130435" y="-123.21428571428571"/>
-        </scene>
         <!--Detail View Controller-->
         <scene sceneID="Anj-uz-0R4">
             <objects>
@@ -452,7 +388,6 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="u4n-Vf-xFY"/>
                         <segue destination="2gO-Cf-Til" kind="relationship" relationship="viewControllers" id="P7r-0Y-D9i"/>
                     </connections>
                 </tabBarController>
@@ -461,7 +396,4 @@
             <point key="canvasLocation" x="137.68115942028987" y="138.61607142857142"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="fbO-TW-hfo"/>
-    </inferredMetricsTieBreakers>
 </document>
