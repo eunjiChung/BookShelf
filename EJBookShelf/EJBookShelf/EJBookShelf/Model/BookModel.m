@@ -6,15 +6,15 @@
 //  Copyright © 2019 eunji. All rights reserved.
 //
 
-#import "TestModel.h"
+#import "BookModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark - JSON serialization
 
-@implementation TestModel
+@implementation BookModel
 
-- (TestModel *)initWithDictionary:(NSDictionary *)dictionary {
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary {
      self = [super init];
     
      if(self){
@@ -37,6 +37,7 @@ NS_ASSUME_NONNULL_BEGIN
 
      return self;
 }
+
 
 @end
 

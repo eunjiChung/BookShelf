@@ -8,13 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		29AA17DFD03BEDE8E5ACC042 /* Pods_EJBookShelf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8434BB5A0DA4D6005DE0009 /* Pods_EJBookShelf.framework */; };
-		7237388323628EFE0001AFF8 /* TestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7237388223628EFE0001AFF8 /* TestModel.m */; };
+		7237388323628EFE0001AFF8 /* BookModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7237388223628EFE0001AFF8 /* BookModel.m */; };
 		7237388823629F370001AFF8 /* ResultInfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7237388623629F370001AFF8 /* ResultInfoTableViewCell.m */; };
 		7237388923629F370001AFF8 /* ResultInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7237388723629F370001AFF8 /* ResultInfoTableViewCell.xib */; };
 		728DE9252362DB8A0019EF78 /* DetailBookImageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 728DE9212362DB8A0019EF78 /* DetailBookImageTableViewCell.m */; };
 		728DE9262362DB8A0019EF78 /* DetailBookInfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 728DE91F2362DB8A0019EF78 /* DetailBookInfoTableViewCell.m */; };
 		728DE9272362DB8A0019EF78 /* DetailBookDescTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 728DE9222362DB8A0019EF78 /* DetailBookDescTableViewCell.m */; };
 		728DE92A2362EDA60019EF78 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 728DE9292362EDA60019EF78 /* BaseViewController.m */; };
+		729848DA2366BBA800BEFD9B /* NewBooks.m in Sources */ = {isa = PBXBuildFile; fileRef = 729848D92366BBA800BEFD9B /* NewBooks.m */; };
+		729848DD2366C4E000BEFD9B /* SearchBooks.m in Sources */ = {isa = PBXBuildFile; fileRef = 729848DC2366C4E000BEFD9B /* SearchBooks.m */; };
 		B65685B723603A5500B9157C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B65685B623603A5500B9157C /* AppDelegate.m */; };
 		B65685C023603A5500B9157C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B65685BE23603A5500B9157C /* Main.storyboard */; };
 		B65685C323603A5500B9157C /* EJBookShelf.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B65685C123603A5500B9157C /* EJBookShelf.xcdatamodeld */; };
@@ -45,8 +47,8 @@
 		0CFB2F2D75B8C4984AF4B01D /* Pods-EJBookShelf.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EJBookShelf.debug.xcconfig"; path = "Target Support Files/Pods-EJBookShelf/Pods-EJBookShelf.debug.xcconfig"; sourceTree = "<group>"; };
 		10E45F799C5C16036B8BEDC9 /* Pods_EJBookShelfTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EJBookShelfTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		275B21C17AE9357636AA58CE /* Pods-EJBookShelfTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EJBookShelfTests.debug.xcconfig"; path = "Target Support Files/Pods-EJBookShelfTests/Pods-EJBookShelfTests.debug.xcconfig"; sourceTree = "<group>"; };
-		7237388123628EFE0001AFF8 /* TestModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestModel.h; sourceTree = "<group>"; };
-		7237388223628EFE0001AFF8 /* TestModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestModel.m; sourceTree = "<group>"; };
+		7237388123628EFE0001AFF8 /* BookModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BookModel.h; sourceTree = "<group>"; };
+		7237388223628EFE0001AFF8 /* BookModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BookModel.m; sourceTree = "<group>"; };
 		7237388523629F370001AFF8 /* ResultInfoTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ResultInfoTableViewCell.h; sourceTree = "<group>"; };
 		7237388623629F370001AFF8 /* ResultInfoTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ResultInfoTableViewCell.m; sourceTree = "<group>"; };
 		7237388723629F370001AFF8 /* ResultInfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResultInfoTableViewCell.xib; sourceTree = "<group>"; };
@@ -58,6 +60,10 @@
 		728DE9242362DB8A0019EF78 /* DetailBookInfoTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = DetailBookInfoTableViewCell.h; path = "/Users/CHUNGEUNJI/Documents/EJ/BookShelf/EJBookShelf/EJBookShelf/EJBookShelf/TableView Cell/DetailBookInfoTableViewCell.h"; sourceTree = "<absolute>"; };
 		728DE9282362EDA60019EF78 /* BaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		728DE9292362EDA60019EF78 /* BaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		729848D82366BBA800BEFD9B /* NewBooks.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewBooks.h; sourceTree = "<group>"; };
+		729848D92366BBA800BEFD9B /* NewBooks.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewBooks.m; sourceTree = "<group>"; };
+		729848DB2366C4E000BEFD9B /* SearchBooks.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchBooks.h; sourceTree = "<group>"; };
+		729848DC2366C4E000BEFD9B /* SearchBooks.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchBooks.m; sourceTree = "<group>"; };
 		73828A66E46DDC9B25E7FF02 /* Pods-EJBookShelfTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EJBookShelfTests.release.xcconfig"; path = "Target Support Files/Pods-EJBookShelfTests/Pods-EJBookShelfTests.release.xcconfig"; sourceTree = "<group>"; };
 		764BF9F240459D94CBBB7454 /* Pods-EJBookShelf.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EJBookShelf.release.xcconfig"; path = "Target Support Files/Pods-EJBookShelf/Pods-EJBookShelf.release.xcconfig"; sourceTree = "<group>"; };
 		B65685B223603A5500B9157C /* EJBookShelf.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EJBookShelf.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -225,8 +231,12 @@
 		B65685F223604D3B00B9157C /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				7237388123628EFE0001AFF8 /* TestModel.h */,
-				7237388223628EFE0001AFF8 /* TestModel.m */,
+				7237388123628EFE0001AFF8 /* BookModel.h */,
+				7237388223628EFE0001AFF8 /* BookModel.m */,
+				729848D82366BBA800BEFD9B /* NewBooks.h */,
+				729848D92366BBA800BEFD9B /* NewBooks.m */,
+				729848DB2366C4E000BEFD9B /* SearchBooks.h */,
+				729848DC2366C4E000BEFD9B /* SearchBooks.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -422,8 +432,10 @@
 				B65685B723603A5500B9157C /* AppDelegate.m in Sources */,
 				B65685EC2360400100B9157C /* BookTableViewCell.m in Sources */,
 				728DE9272362DB8A0019EF78 /* DetailBookDescTableViewCell.m in Sources */,
-				7237388323628EFE0001AFF8 /* TestModel.m in Sources */,
+				7237388323628EFE0001AFF8 /* BookModel.m in Sources */,
+				729848DD2366C4E000BEFD9B /* SearchBooks.m in Sources */,
 				B65685E723603B5D00B9157C /* DetailViewController.m in Sources */,
+				729848DA2366BBA800BEFD9B /* NewBooks.m in Sources */,
 				B65685F12360478100B9157C /* EJHTTPClient.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

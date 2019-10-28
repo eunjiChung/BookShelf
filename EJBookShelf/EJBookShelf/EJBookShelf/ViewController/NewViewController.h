@@ -9,13 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "BaseViewController.h"
 
-//@class NewBooks;
-
 NS_ASSUME_NONNULL_BEGIN
 
 @interface NewViewController : BaseViewController
-
-//@property (nonatomic, copy) NewBooks *theNewBook;
 
 @end
 

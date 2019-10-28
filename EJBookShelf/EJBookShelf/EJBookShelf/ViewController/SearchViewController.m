@@ -13,16 +13,17 @@
 #import "UIImageView+AFNetworking.h"
 #import "DetailViewController.h"
 #import <SVPullToRefresh.h>
+#import "SearchBooks.h"
+#import "BookModel.h"
 
 @interface SearchViewController () <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 
-@property (strong, nonatomic) NSMutableArray *list; // 가져오는 책 결과 리스트
-@property (assign, nonatomic) NSInteger total;      // 총 페이지 수
-@property (assign, nonatomic) NSInteger page;       // 현재 몇 쪽인지
-@property (assign, nonatomic) NSString *keyword;    // 검색 키워드
+@property (strong, nonatomic) SearchBooks *searchedBooks;   // 검색한 책 리스트
+@property (assign, nonatomic) NSString *keyword;            // 검색 키워드
+@property (assign, nonatomic) NSInteger startRows;          // 테이블 뷰가 시작되는 줄
 
 @end
 
@@ -37,9 +38,6 @@
     // Initialize
     [self registerNibForClass];
     
-    self.total = 1;
-    self.page = 1;
-    
     [self addPullToRefreshControl];
     [self addInfiniteScrollingControl];
 }
@@ -47,30 +45,32 @@
 
 #pragma mark - Call API
 
-- (void)callBySearchKeyword:(NSString *)keyword {
-    [[EJHTTPClient sharedInstance] requestSearchBookStore:keyword page:self.page success:^(id  _Nonnull result) {
-        NSDictionary *dict = (NSDictionary *)result;
-        self.total = [dict[@"total"] integerValue];
-        
-        NSMutableArray *array = (NSMutableArray *) dict[@"books"];
-        if (self.list == nil) {
-            self.list = [array mutableCopy];
-        } else {
-            [self.list addObjectsFromArray:array];
-        }
-        
-        self.page = [dict[@"page"] integerValue];
-        
-        [self.tableView reloadData];
+- (void)callBySearchKeyword:(NSString *)keyword page:(NSInteger)page {
+    if (keyword != nil) {
+        [[EJHTTPClient sharedInstance] requestSearchBookStore:keyword
+                                                         page:page
+                                                      success:^(id  _Nonnull result) {
+            NSDictionary *dict = (NSDictionary *)result;
+            
+            if (self.searchedBooks == nil) {
+                self.searchedBooks = [[SearchBooks alloc] initWithDictionary:dict];
+                [self.tableView reloadData];
+            } else {
+                [self insertNewRows:dict];
+            }
+            
+            [self.tableView.pullToRefreshView stopAnimating];
+            [self.tableView.infiniteScrollingView stopAnimating];
+        } failure:^(NSError * _Nonnull error) {
+            [self showErrorAlert:error];
+        }];
+    } else {
+        [self showDefaultAlert:@"알림!" message:@"검색어를 넣어주세요!"];
         [self.tableView.pullToRefreshView stopAnimating];
-        [self.tableView.infiniteScrollingView stopAnimating];
-    } failure:^(NSError * _Nonnull error) {
-        [self showErrorAlert:error];
-    }];
+    }
 }
 
 #pragma mark - SearchBar Delegate
-
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
     [self.view endEditing:YES];
     [searchBar resignFirstResponder];
@@ -79,7 +79,7 @@
         NSString *notEncoded = searchBar.text;
         NSString *encoded = [notEncoded stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
         self.keyword = encoded;
-        [self callBySearchKeyword:self.keyword];
+        [self callBySearchKeyword:self.keyword page:1];
     } else {
         [self showDefaultAlert:@"알림" message:@"검색어를 넣어주세요"];
     }
@@ -89,51 +89,52 @@
 
 #pragma mark - TableView Data Source
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if (self.total == 0) {
-        return 1;
-    }
-    return (self.list == nil) ? 1 : self.list.count;
+    if (self.searchedBooks.total == 0) { return 1; }
+    return (self.searchedBooks.books == nil) ? 1 : self.searchedBooks.books.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    if (self.list == nil) {
-        ResultInfoTableViewCell *cell2 = [tableView dequeueReusableCellWithIdentifier:@"ResultInfoTableViewCell" forIndexPath:indexPath];
-        cell2.resultLabel.text = [NSString stringWithFormat:@"검색어를 넣어주세요!"];
-        return cell2;
-    } else {
-        // 검색 결과가 없는 경우
-        if (self.total == 0) {
-            ResultInfoTableViewCell *cell2 = [tableView dequeueReusableCellWithIdentifier:@"ResultInfoTableViewCell" forIndexPath:indexPath];
-            cell2.resultLabel.text = [NSString stringWithFormat:@"검색 결과가 없습니다!"];
-            return cell2;
+        // 검색 전
+    if (self.searchedBooks == nil) {
+        ResultInfoTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ResultInfoTableViewCell" forIndexPath:indexPath];
+        cell.resultLabel.text = [NSString stringWithFormat:@"검색어를 넣어주세요!"];
+        return cell;
+    }
+    else
+    {
+        // 검색 후
+        
+        // 1. 검색 결과가 없는 경우
+        if (self.searchedBooks.total == 0) {
+            ResultInfoTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ResultInfoTableViewCell" forIndexPath:indexPath];
+            cell.resultLabel.text = [NSString stringWithFormat:@"검색 결과가 없습니다!"];
+            return cell;
         }
         
-        // 검색 결과가 있는 경우
-        // 첫번째 셀에는 몇개의 결과가 검색됐는지 표시
+        // 2. 검색 결과가 있는 경우
         if (indexPath.row == 0) {
+            // 2-1. 첫번째 셀에는 몇개의 결과가 검색됐는지 표시
             ResultInfoTableViewCell *cell2 = (ResultInfoTableViewCell *) [tableView dequeueReusableCellWithIdentifier:@"ResultInfoTableViewCell" forIndexPath:indexPath];
-            cell2.resultLabel.text = [NSString stringWithFormat:@"총 %zd개의 결과가 검색됐습니다.", self.total];
+            cell2.resultLabel.text = [NSString stringWithFormat:@"총 %zd개의 결과가 검색됐습니다.", self.searchedBooks.total];
             return cell2;
         } else {
-            // 결과를 나타냄
+            // 2-2. 결과를 나타냄
             BookTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BookTableViewCell" forIndexPath:indexPath];
             
-            NSDictionary *bookInfo = self.list[indexPath.row];
-            [cell.bookImageView setImageWithURL:[NSURL URLWithString:bookInfo[@"image"]]];
-            cell.bookTitleLabel.text = bookInfo[@"title"];
+            BookModel *book = (BookModel *) self.searchedBooks.books[indexPath.row];
             
-            if (![bookInfo[@"subtitle"] isEqual:@""]) {
-                cell.bookSubTitleLabel.text = bookInfo[@"subtitle"];
-            }
-            
-            cell.bookPriceLabel.text = bookInfo[@"price"];
-            cell.bookIsbnLabel.text = bookInfo[@"isbn13"];
-            cell.bookUrlTextView.attributedText = [self generateHyperlink:bookInfo[@"url"]];
+            [cell.bookImageView setImageWithURL:[NSURL URLWithString:book.image]];
+            cell.bookTitleLabel.text = book.title;
+            if (![book.subtitle isEqual:@""]) { cell.bookSubTitleLabel.text = book.subtitle; }
+            cell.bookPriceLabel.text = book.price;
+            cell.bookIsbnLabel.text = book.isbn13;
+            cell.bookUrlTextView.attributedText = [self generateHyperlink:book.url];
             
             return cell;
         }
     }
+    
     
     return [[UITableViewCell alloc] init];
 }
@@ -148,36 +149,55 @@
     if ([segue.identifier isEqual:@"search_detail_segue"]) {
         DetailViewController *destination = segue.destinationViewController;
         NSIndexPath *selectedIndexPath = sender;
-        NSDictionary *book = self.list[selectedIndexPath.row];
-        destination.isbn13 = book[@"isbn13"];
+        BookModel *book = self.searchedBooks.books[selectedIndexPath.row];
+        destination.isbn13 = book.isbn13;
     }
 }
 
 #pragma mark - Private Method
+- (void)insertNewRows:(NSDictionary *)newResults {
+    NSInteger startRowIndex = self.searchedBooks.books.count;
+    NSMutableArray *indexPathList = [NSMutableArray new];
+    
+    for(int i = 0; i < 10; i++)
+    {
+        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:startRowIndex+i inSection:0];
+        [indexPathList addObject:indexPath];
+    }
+    
+    NSMutableArray<BookModel *> *originalBooks = self.searchedBooks.books.mutableCopy;
+    SearchBooks *newSearchResults = [[SearchBooks alloc] initWithDictionary:newResults];
+    [originalBooks addObjectsFromArray:newSearchResults.books];
+    self.searchedBooks.books = originalBooks;
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.tableView insertRowsAtIndexPaths:indexPathList withRowAnimation:UITableViewRowAnimationAutomatic];
+    });
+}
+
 - (void)addPullToRefreshControl {
     [self.tableView addPullToRefreshWithActionHandler:^{
-        self.total = 1;
-        self.page = 1;
-        self.list = nil;
-        [self callBySearchKeyword:self.keyword];
+        self.searchedBooks = nil;
+        [self callBySearchKeyword:self.keyword page:1];
     }];
 }
 
 - (void)addInfiniteScrollingControl {
     [self.tableView addInfiniteScrollingWithActionHandler:^{
-        self.page += 1;
+        self.searchedBooks.page += 1;
         
         if ([self isEndOfPage]) {
             [self.tableView.infiniteScrollingView stopAnimating];
         } else {
-            [self callBySearchKeyword:self.keyword];
+            [self callBySearchKeyword:self.keyword page:self.searchedBooks.page];
         }
     }];
 }
 
 - (BOOL)isEndOfPage {
-    NSInteger totalPage = (self.total % 10 != 0) ? (self.total / 10 + 1) : (self.total / 10);
-    return self.page > totalPage ? YES : NO;
+    NSInteger total = self.searchedBooks.total;
+    NSInteger totalPage = (total % 10 != 0) ? (total / 10 + 1) : (total / 10);
+    return self.searchedBooks.page > totalPage ? YES : NO;
 }
 
 - (void)registerNibForClass {

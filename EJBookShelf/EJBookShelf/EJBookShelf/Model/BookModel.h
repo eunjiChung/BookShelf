@@ -1,17 +1,18 @@
-// To parse this JSON:
 //
-//   NSError *error;
-//   EJBook *book = [EJBook fromJSON:json encoding:NSUTF8Encoding error:&error];
+//  TestModel.h
+//  EJBookShelf
+//
+//  Created by CHUNGEUNJI on 25/10/2019.
+//  Copyright © 2019 eunji. All rights reserved.
+//
 
 #import <Foundation/Foundation.h>
-
-@class EJBook;
 
 NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark - Object interfaces
+@interface BookModel : NSObject
 
-@interface EJBook : NSObject
 @property (nonatomic, copy) NSString *error;
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) NSString *subtitle;
@@ -28,14 +29,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSString *image;
 @property (nonatomic, copy) NSString *url;
 
-+ (_Nullable instancetype)fromJSON:(NSString *)json encoding:(NSStringEncoding)encoding error:(NSError *_Nullable *)error;
-+ (_Nullable instancetype)fromData:(NSData *)data error:(NSError *_Nullable *)error;
-- (NSString *_Nullable)toJSON:(NSStringEncoding)encoding error:(NSError *_Nullable *)error;
-- (NSData *_Nullable)toData:(NSError *_Nullable *)error;
-
-+ (instancetype)fromJSONDictionary:(NSDictionary *)dict;
-- (NSDictionary *)JSONDictionary;
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary;
 
 @end
 
 NS_ASSUME_NONNULL_END
+

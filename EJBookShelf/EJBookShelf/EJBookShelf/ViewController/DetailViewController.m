@@ -13,11 +13,12 @@
 #import "DetailBookInfoTableViewCell.h"
 #import "DetailBookImageTableViewCell.h"
 #import "UIImageView+AFNetworking.h"
+#import "BookModel.h"
 
 @interface DetailViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableview;
-@property (assign, nonatomic) NSDictionary *bookInfo;
+@property (strong, nonatomic) BookModel *model;
 
 @end
 
@@ -33,7 +34,8 @@
 - (void)callBookInfo {
     [[EJHTTPClient sharedInstance] requestDetailBookInfo:self.isbn13 success:^(id  _Nonnull result) {
         NSDictionary *dict = result;
-        self.bookInfo = dict;
+        self.model = [[BookModel alloc] initWithDictionary:dict];
+        
         [self.tableview reloadData];
     } failure:^(NSError * _Nonnull error) {
         [self showErrorAlert:error];
@@ -56,31 +58,39 @@
     
     if (indexPath.row == 0) {
         DetailBookImageTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DetailBookImageTableViewCell" forIndexPath:indexPath];
-        [cell.bookImageView setImageWithURL:[NSURL URLWithString:self.bookInfo[@"image"]]];
+        
+        if (self.model != nil) {
+            [cell.bookImageView setImageWithURL:[NSURL URLWithString:self.model.image]];
+        }
+        
         return cell;
     } else if (indexPath.row == 1) {
         DetailBookInfoTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DetailBookInfoTableViewCell" forIndexPath:indexPath];
         
-        if (self.bookInfo != nil) {
-            cell.bookTitleLabel.text = self.bookInfo[@"title"];
-            cell.bookSubtitleLabel.text = self.bookInfo[@"subtitle"];
-            cell.bookPriceLabel.text = self.bookInfo[@"price"];
-            // TODO: - Rating이 0일 경우는 어떻게...?
-            cell.bookRatingLabel.text = [NSString stringWithFormat:@"Rating %@", self.bookInfo[@"rating"]];
-            cell.bookAuthorLabel.text = self.bookInfo[@"authors"];
-            cell.bookPublisherLabel.text = self.bookInfo[@"publisher"];
-            cell.bookYear.text = [NSString stringWithFormat:@"%@Year", self.bookInfo[@"year"]];
-            cell.bookPages.text = [NSString stringWithFormat:@"%@pages", self.bookInfo[@"pages"]];
-            cell.bookIsbn10Label.text = self.bookInfo[@"isbn10"];
-            cell.bookIsbn13Label.text = self.bookInfo[@"isbn13"];
-            cell.bookLanguage.text = self.bookInfo[@"language"];
-            cell.bookUrl.attributedText = [self generateHyperlink:self.bookInfo[@"url"]];
+        if (self.model != nil) {
+            cell.bookTitleLabel.text = self.model.title;
+            cell.bookSubtitleLabel.text = self.model.subtitle;
+            cell.bookPriceLabel.text = self.model.price;
+            cell.bookRatingLabel.text = [NSString stringWithFormat:@"Rating %@", self.model.rating];
+            cell.bookAuthorLabel.text = self.model.authors;
+            cell.bookPublisherLabel.text = self.model.publisher;
+            cell.bookYear.text = [NSString stringWithFormat:@"%@Year", self.model.year];
+            cell.bookPages.text = [NSString stringWithFormat:@"%@pages", self.model.pages];
+            cell.bookIsbn10Label.text = self.model.isbn10;
+            cell.bookIsbn13Label.text = self.model.isbn13;
+            cell.bookLanguage.text = self.model.language;
+            cell.bookUrl.attributedText = [self generateHyperlink:self.model.url];
         }
+        
         
         return cell;
     } else if (indexPath.row == 2) {
         DetailBookDescTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DetailBookDescTableViewCell" forIndexPath:indexPath];
-        cell.descTextLabel.text = self.bookInfo[@"desc"];
+        
+        if (self.model != nil) {
+            cell.descTextLabel.text = self.model.desc;
+        }
+        
         return cell;
     }
     
