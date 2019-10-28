@@ -15,12 +15,4 @@
     // Initialization code
 }
 
-- (void)generateBookCell {
-//    self.bookTitleLabel.text = self.book.title;
-//    self.bookSubTitleLabel.text = self.book.subtitle;
-//    self.bookPriceLabel.text = self.book.price;
-//    self.bookIsbnLabel.text = self.book.isbn13;
-//    self.bookUrlLabel.text = self.book.url;
-}
-
 @end
