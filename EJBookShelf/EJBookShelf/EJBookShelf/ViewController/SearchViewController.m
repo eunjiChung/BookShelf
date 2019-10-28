@@ -20,6 +20,7 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 
 @property (strong, nonatomic) SearchBooks *searchedBooks;   // 검색한 책 리스트
 @property (assign, nonatomic) NSString *keyword;            // 검색 키워드
@@ -37,6 +38,7 @@
     
     // Initialize
     [self registerNibForClass];
+    [self.activityIndicator setHidden:YES];
     
     [self addPullToRefreshControl];
     [self addInfiniteScrollingControl];
@@ -61,6 +63,9 @@
             
             [self.tableView.pullToRefreshView stopAnimating];
             [self.tableView.infiniteScrollingView stopAnimating];
+            
+            [self.activityIndicator stopAnimating];
+            [self.activityIndicator setHidden:YES];
         } failure:^(NSError * _Nonnull error) {
             [self showErrorAlert:error];
         }];
@@ -76,6 +81,9 @@
     [searchBar resignFirstResponder];
     
     if (![searchBar.text isEqualToString:@""]) {
+        [self.activityIndicator setHidden:NO];
+        [self.activityIndicator startAnimating];
+        
         NSString *notEncoded = searchBar.text;
         NSString *encoded = [notEncoded stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
         self.keyword = encoded;
@@ -177,6 +185,9 @@
 
 - (void)addPullToRefreshControl {
     [self.tableView addPullToRefreshWithActionHandler:^{
+        [self.activityIndicator setHidden:NO];
+        [self.activityIndicator startAnimating];
+        
         self.searchedBooks = nil;
         [self callBySearchKeyword:self.keyword page:1];
     }];

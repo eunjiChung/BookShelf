@@ -19,7 +19,6 @@
 		729848DD2366C4E000BEFD9B /* SearchBooks.m in Sources */ = {isa = PBXBuildFile; fileRef = 729848DC2366C4E000BEFD9B /* SearchBooks.m */; };
 		B65685B723603A5500B9157C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B65685B623603A5500B9157C /* AppDelegate.m */; };
 		B65685C023603A5500B9157C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B65685BE23603A5500B9157C /* Main.storyboard */; };
-		B65685C323603A5500B9157C /* EJBookShelf.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B65685C123603A5500B9157C /* EJBookShelf.xcdatamodeld */; };
 		B65685C523603A5600B9157C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B65685C423603A5600B9157C /* Assets.xcassets */; };
 		B65685C823603A5600B9157C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B65685C623603A5600B9157C /* LaunchScreen.storyboard */; };
 		B65685CB23603A5600B9157C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B65685CA23603A5600B9157C /* main.m */; };
@@ -70,7 +69,6 @@
 		B65685B523603A5500B9157C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B65685B623603A5500B9157C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		B65685BF23603A5500B9157C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		B65685C223603A5500B9157C /* EJBookShelf.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EJBookShelf.xcdatamodel; sourceTree = "<group>"; };
 		B65685C423603A5600B9157C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B65685C723603A5600B9157C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B65685C923603A5600B9157C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -211,7 +209,6 @@
 				B65685C423603A5600B9157C /* Assets.xcassets */,
 				B65685C623603A5600B9157C /* LaunchScreen.storyboard */,
 				B65685CA23603A5600B9157C /* main.m */,
-				B65685C123603A5500B9157C /* EJBookShelf.xcdatamodeld */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -422,7 +419,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B65685CB23603A5600B9157C /* main.m in Sources */,
-				B65685C323603A5500B9157C /* EJBookShelf.xcdatamodeld in Sources */,
 				728DE9252362DB8A0019EF78 /* DetailBookImageTableViewCell.m in Sources */,
 				B65685E123603B3600B9157C /* NewViewController.m in Sources */,
 				B65685E423603B4C00B9157C /* SearchViewController.m in Sources */,
@@ -699,19 +695,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		B65685C123603A5500B9157C /* EJBookShelf.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				B65685C223603A5500B9157C /* EJBookShelf.xcdatamodel */,
-			);
-			currentVersion = B65685C223603A5500B9157C /* EJBookShelf.xcdatamodel */;
-			path = EJBookShelf.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = B65685AA23603A5500B9157C /* Project object */;
 }

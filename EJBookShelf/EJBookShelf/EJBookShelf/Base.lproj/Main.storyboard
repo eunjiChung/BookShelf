@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--New-->
+        <!--New View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="NewViewController" sceneMemberID="viewController">
@@ -41,6 +41,9 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="PyR-Ct-wai"/>
                                 </connections>
                             </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="lXA-jp-dyA">
+                                <rect key="frame" x="0.0" y="95" width="414" height="718"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -48,14 +51,19 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="LJZ-eZ-9JG" secondAttribute="bottom" id="CeK-V1-1fS"/>
                             <constraint firstItem="1Ld-OJ-Dhr" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="J50-ag-ScG"/>
                             <constraint firstItem="1Ld-OJ-Dhr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="N5l-Go-IwL"/>
+                            <constraint firstItem="lXA-jp-dyA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Nbn-rT-fI7"/>
                             <constraint firstItem="LJZ-eZ-9JG" firstAttribute="top" secondItem="1Ld-OJ-Dhr" secondAttribute="bottom" id="VjV-Zm-tOe"/>
                             <constraint firstItem="1Ld-OJ-Dhr" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="WJn-T0-M5v"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="LJZ-eZ-9JG" secondAttribute="trailing" id="YRP-rB-p3M"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="lXA-jp-dyA" secondAttribute="bottom" id="YgU-Po-mOl"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="lXA-jp-dyA" secondAttribute="trailing" id="iHM-hx-Pz3"/>
+                            <constraint firstItem="lXA-jp-dyA" firstAttribute="top" secondItem="1Ld-OJ-Dhr" secondAttribute="bottom" id="wiX-hu-1Ox"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="New" image="book" catalog="system" id="NGl-oV-DJa"/>
+                    <tabBarItem key="tabBarItem" title="" systemItem="recents" id="NGl-oV-DJa"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="lXA-jp-dyA" id="Osu-QC-7aj"/>
                         <outlet property="tableView" destination="LJZ-eZ-9JG" id="hOR-ii-p7Y"/>
                         <segue destination="gzs-nd-BEh" kind="presentation" identifier="new_detail_segue" modalPresentationStyle="fullScreen" id="0g9-I2-5hX"/>
                     </connections>
@@ -324,20 +332,26 @@
                                     <constraint firstItem="Cgq-fD-tvb" firstAttribute="top" secondItem="gqv-aK-dbC" secondAttribute="top" id="iI8-2r-CmJ"/>
                                 </constraints>
                             </view>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="RIL-7F-Gxu">
+                                <rect key="frame" x="188.5" y="434.5" width="37" height="37"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="gqv-aK-dbC" secondAttribute="bottom" id="4is-kq-A4o"/>
                             <constraint firstItem="J4n-zK-nIP" firstAttribute="trailing" secondItem="4h4-aF-X8o" secondAttribute="trailing" id="AlJ-G1-Xvm"/>
                             <constraint firstItem="gqv-aK-dbC" firstAttribute="leading" secondItem="4h4-aF-X8o" secondAttribute="leading" id="DMD-Mf-LlZ"/>
+                            <constraint firstItem="RIL-7F-Gxu" firstAttribute="centerY" secondItem="4h4-aF-X8o" secondAttribute="centerY" id="IyL-xt-883"/>
                             <constraint firstItem="J4n-zK-nIP" firstAttribute="leading" secondItem="4h4-aF-X8o" secondAttribute="leading" id="MoX-QC-gKZ"/>
                             <constraint firstItem="4h4-aF-X8o" firstAttribute="trailing" secondItem="gqv-aK-dbC" secondAttribute="trailing" id="eNe-3a-bJb"/>
                             <constraint firstItem="gqv-aK-dbC" firstAttribute="top" secondItem="J4n-zK-nIP" secondAttribute="bottom" id="oyK-U1-VCl"/>
+                            <constraint firstItem="RIL-7F-Gxu" firstAttribute="centerX" secondItem="4h4-aF-X8o" secondAttribute="centerX" id="ut7-bX-gyQ"/>
                             <constraint firstItem="J4n-zK-nIP" firstAttribute="top" secondItem="s3k-Tt-49r" secondAttribute="top" id="zzw-uk-V2m"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="4h4-aF-X8o"/>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="RIL-7F-Gxu" id="lnw-dk-lh7"/>
                         <outlet property="tableview" destination="Cgq-fD-tvb" id="xV8-OZ-Ghd"/>
                     </connections>
                 </viewController>
@@ -345,7 +359,7 @@
             </objects>
             <point key="canvasLocation" x="3000.0000000000005" y="193.52678571428569"/>
         </scene>
-        <!--Search-->
+        <!--Search View Controller-->
         <scene sceneID="4OQ-Hq-t9O">
             <objects>
                 <viewController id="2gO-Cf-Til" customClass="SearchViewController" sceneMemberID="viewController">
@@ -390,14 +404,19 @@
                                     <outlet property="delegate" destination="2gO-Cf-Til" id="EDj-SR-BlU"/>
                                 </connections>
                             </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="noD-EE-025">
+                                <rect key="frame" x="188.5" y="438" width="37" height="37"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="noD-EE-025" firstAttribute="centerX" secondItem="jEC-SK-Oml" secondAttribute="centerX" id="5I5-wS-bCt"/>
                             <constraint firstItem="xKX-jM-0U6" firstAttribute="trailing" secondItem="jEC-SK-Oml" secondAttribute="trailing" id="66D-6h-hFU"/>
                             <constraint firstItem="Z0x-el-5BA" firstAttribute="leading" secondItem="jEC-SK-Oml" secondAttribute="leading" id="7a3-Uk-07T"/>
                             <constraint firstItem="IxS-Kp-IZz" firstAttribute="trailing" secondItem="jEC-SK-Oml" secondAttribute="trailing" id="CVa-ZN-Sln"/>
                             <constraint firstItem="xKX-jM-0U6" firstAttribute="leading" secondItem="jEC-SK-Oml" secondAttribute="leading" id="NZD-8W-QbC"/>
                             <constraint firstItem="xKX-jM-0U6" firstAttribute="top" secondItem="nBx-vj-a00" secondAttribute="top" id="R0n-BC-9R5"/>
+                            <constraint firstItem="noD-EE-025" firstAttribute="top" secondItem="IxS-Kp-IZz" secondAttribute="bottom" constant="287" id="XWs-oF-YmV"/>
                             <constraint firstItem="jEC-SK-Oml" firstAttribute="trailing" secondItem="Z0x-el-5BA" secondAttribute="trailing" id="XdS-df-QX0"/>
                             <constraint firstItem="IxS-Kp-IZz" firstAttribute="top" secondItem="xKX-jM-0U6" secondAttribute="bottom" id="iMW-Cg-nr4"/>
                             <constraint firstItem="IxS-Kp-IZz" firstAttribute="leading" secondItem="jEC-SK-Oml" secondAttribute="leading" id="k1e-bk-ueS"/>
@@ -406,8 +425,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="jEC-SK-Oml"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Search" image="magnifyingglass" catalog="system" id="yNU-Zn-XXQ"/>
+                    <tabBarItem key="tabBarItem" systemItem="search" id="yNU-Zn-XXQ"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="noD-EE-025" id="Ecc-hz-TDb"/>
                         <outlet property="searchBar" destination="IxS-Kp-IZz" id="fT9-9E-0mx"/>
                         <outlet property="tableView" destination="Z0x-el-5BA" id="2Ec-fq-m1x"/>
                         <segue destination="gzs-nd-BEh" kind="presentation" identifier="search_detail_segue" modalPresentationStyle="fullScreen" id="fbO-TW-hfo"/>
@@ -437,10 +457,6 @@
             <point key="canvasLocation" x="137.68115942028987" y="138.61607142857142"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="book" catalog="system" width="64" height="50"/>
-        <image name="magnifyingglass" catalog="system" width="64" height="56"/>
-    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="fbO-TW-hfo"/>
     </inferredMetricsTieBreakers>

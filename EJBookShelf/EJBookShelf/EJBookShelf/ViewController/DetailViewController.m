@@ -18,6 +18,8 @@
 @interface DetailViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableview;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
+
 @property (strong, nonatomic) BookModel *model;
 
 @end
@@ -27,6 +29,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self.activityIndicator startAnimating];
     [self callBookInfo];
 }
 
@@ -37,6 +40,8 @@
         self.model = [[BookModel alloc] initWithDictionary:dict];
         
         [self.tableview reloadData];
+        [self.activityIndicator stopAnimating];
+        [self.activityIndicator setHidden:YES];
     } failure:^(NSError * _Nonnull error) {
         [self showErrorAlert:error];
     }];
@@ -51,6 +56,7 @@
 #pragma mark  - TableView Data source
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    if (self.model == nil) { return 0; }
     return 3;
 }
 

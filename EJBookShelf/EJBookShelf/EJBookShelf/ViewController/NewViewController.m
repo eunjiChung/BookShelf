@@ -18,6 +18,7 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NewBooks *booksInfo;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 
 @end
 
@@ -28,6 +29,7 @@
     
     [self.tableView registerNib:[UINib nibWithNibName:@"BookTableViewCell" bundle:nil] forCellReuseIdentifier:@"BookTableViewCell"];
 
+    [self.activityIndicator startAnimating];
     [self callNewBookList];
 }
 
@@ -37,6 +39,9 @@
         NSDictionary *dict = (NSDictionary *) result;
         self.booksInfo = [[NewBooks alloc] initWithDictionary:dict];
         [self.tableView reloadData];
+        
+        [self.activityIndicator stopAnimating];
+        [self.activityIndicator setHidden:YES];
     } failure:^(NSError * _Nonnull error) {
         [self showErrorAlert:error];
     }];
@@ -45,7 +50,7 @@
 #pragma mark - TableView Data Source
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if (self.booksInfo != nil) { return self.booksInfo.total; }
-    return 1;
+    return 0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
